@@ -10,9 +10,8 @@
     "build:dev": "webpack --progress --profile",
     "package": "node package.js",
     "package-all": "npm run package -- --all",
-    "electron": "electron src/app",
-    "webpack-test": "webpack --config webpack.test.js --progress --profile",
-    "start": "electron ."
+    "start": "electron src/app",
+    "webpack-test": "webpack --config webpack.test.js --progress --profile"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [

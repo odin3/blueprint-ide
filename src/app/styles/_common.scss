@@ -5,15 +5,19 @@ body, html {
     width: 100%;
     min-height: 100%;
     min-width: 100%;
-    font: 10px 'Segoe UI', 'San Francisco', 'helvetica', sans-serif;
+    font: 10px 'Lato', 'Segoe UI', 'San Francisco', 'helvetica', sans-serif;
     background: #1e1e1e;
     color: #fff;
+}
+
+* {
+  font-family: 'Lato', 'Segoe UI', 'San Francisco', 'helvetica', sans-serif;
 }
 
 .blueprint {
     background-position: 0 0,0 0,0 0;
     background-color: #00539f;
-    background-image: url(../images/blueprint.png);
+    background-image: url(./images/blueprint.png);
     background-repeat: repeat,repeat,repeat-x;
     color: white;
 }
@@ -21,4 +25,21 @@ body, html {
 .full {
     height: 100%;
     width: 100%;
+}
+
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
 }

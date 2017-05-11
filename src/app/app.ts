@@ -18,14 +18,8 @@ import { authStore, authInitialState } from './store/auth.store';
 /**
  * Import our child components
  */
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
+import { WellcomeComponent } from './components/wellcome/wellcome.component';
 import { AppComponent } from './components/app.component';
-
-/**
- * Import material UI Components
- */
-import { MaterialModule } from '@angular/material';
 
 import { routes } from './app.routes';
 
@@ -44,12 +38,11 @@ import { Authentication } from './services/authentication';
         ReactiveFormsModule,
         HttpModule,
         BrowserAnimationsModule,
-        MaterialModule.forRoot(),
         RouterModule.forRoot(routes, { useHash: true }),
         StoreModule.provideStore({ authStore }, { authStore: authInitialState }),
     ],
     providers: [Authentication],
-    declarations: [AppComponent, HomeComponent, LoginComponent],
+    declarations: [AppComponent, WellcomeComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

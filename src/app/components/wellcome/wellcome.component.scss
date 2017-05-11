@@ -1,0 +1,25 @@
+:host {
+  color: white;
+}
+
+.wellcome__header {
+  padding: 10px 0;
+}
+
+.wellcome__logo {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 48pt;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  padding: 10px 0;
+}
+
+.wellcome__info {
+  font-size: 9.75pt;
+  & > div {
+    padding: 0 10px;
+  }
+}
