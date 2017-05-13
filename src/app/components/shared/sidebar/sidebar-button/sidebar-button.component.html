@@ -1,5 +1,6 @@
 <button class="sidebar__tab"
         [title]="title"
+        [disabled]="disabled"
         [ngClass]="{'sidebar__tab--active': active, 'sidebar__tab--small': isSmall}">
   <i [class]="iconClass"></i>
   <span *ngIf="isSmall">{{title}}</span>

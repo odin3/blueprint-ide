@@ -10,6 +10,7 @@ import { isNil } from 'lodash';
 export class SidebarButtonComponent implements OnInit {
   @Input() active: boolean = false;
   @Input() isSmall: boolean = false;
+  @Input() disabled: boolean = false;
   @Input() icon: string = null;
   @Input() title: string = '';
 

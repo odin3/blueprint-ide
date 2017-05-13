@@ -11,14 +11,14 @@
       <sidebar-tab title="Favorites" icon="star">
         <b>Sources</b>
       </sidebar-tab>
+      <sidebar-tab title="Source Control" icon="git">
+        Commits, changes, etc...
+      </sidebar-tab>
       <sidebar-tab title="Tasks" icon="format-list-checks">
-        <b>Tasks</b>
       </sidebar-tab>
       <sidebar-button title="Project Settings" icon="settings">
-        <b>Settings</b>
       </sidebar-button>
       <sidebar-button title="Extensions" icon="package-variant">
-        <b>Sources</b>
       </sidebar-button>
     </sidebar>
     <!-- #endregion -->
@@ -37,8 +37,8 @@
                size="small"
                [showFirstTab]="false"
                [singleOnly]="true">
-        <sidebar-tab title="Project tree" icon="file-multiple">
-          <b>Tree</b>
+        <sidebar-tab title="Terminal" icon="code-greater-than">
+          <code>user@localhost:~$</code>
         </sidebar-tab>
         <sidebar-tab title="Data sources" icon="share-variant">
           <b>Sources</b>
@@ -51,12 +51,14 @@
     <sidebar class="workspace__aside"
              position="right"
              [showFirstTab]="false">
-      <sidebar-tab title="Project tree" icon="file-multiple">
-        <b>Tree</b>
+      <sidebar-tab title="Toolbox" icon="format-list-bulleted-type">
+        List of components, services, etc...
       </sidebar-tab>
       <sidebar-tab title="Properties" icon="share-variant">
         <b>Sources</b>
       </sidebar-tab>
+      <sidebar-button title="Edit View" icon="code-tags">
+      </sidebar-button>
     </sidebar>
     <!-- #endregion -->
   </div>
