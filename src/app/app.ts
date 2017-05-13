@@ -1,5 +1,6 @@
 import { NgDraggableModule } from 'angular-draggable';
 import { AngularDraggableModule } from 'angular2-draggable';
+import { ResizableModule } from 'angular-resizable-element';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*
@@ -45,6 +46,7 @@ import { routes } from './app.routes';
         BrowserAnimationsModule,
         NgDraggableModule,
         AngularDraggableModule,
+        ResizableModule,
         RouterModule.forRoot(routes, { useHash: true }),
         StoreModule.provideStore({ workSpaceStore }, { workSpaceStore: workSpaceInitialState }),
     ],

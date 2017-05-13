@@ -1,5 +1,14 @@
-:host {
-  display: block;
-  height: 100%;
-  width: 100%;
+
+.editor {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
 }
+
+.editor__workspace {
+  margin: auto;
+  flex: 1;
+  height: 100%;
+}
+
+

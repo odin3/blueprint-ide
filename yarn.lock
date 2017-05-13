@@ -165,6 +165,10 @@ angular-draggable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/angular-draggable/-/angular-draggable-1.0.1.tgz#5841361841ae84cc67e7300deefe2c632d6ab59f"
 
+angular-resizable-element@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/angular-resizable-element/-/angular-resizable-element-1.1.0.tgz#43e5486ff6e79394e5702b72a101225d683a5a87"
+
 angular2-draggable@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/angular2-draggable/-/angular2-draggable-1.0.2.tgz#1027157ec5f95b01494cb2bf4e8a8022c90c53cc"

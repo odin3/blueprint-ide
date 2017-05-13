@@ -40,6 +40,6 @@ export class WellcomeComponent implements OnInit {
   }
 
   createProject() {
-
+    this.router.navigateByUrl('/editor');
   }
 }

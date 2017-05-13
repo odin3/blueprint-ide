@@ -1,0 +1,26 @@
+<div class="sidebar__tabs">
+  <button class="sidebar__tab sidebar__tab--active">
+    <i class="mdi mdi-file-multiple"></i>
+  </button>
+  <button class="sidebar__tab">
+    <i class="mdi mdi-share-variant"></i>
+  </button>
+  <button class="sidebar__tab">
+    <i class="mdi mdi-star"></i>
+  </button>
+</div>
+<div class="sidebar__content"
+     #container
+     mwlResizable
+     [resizeEdges]="{bottom: false, right: true, top: false, left: false}"
+     [enableGhostResize]="true"
+     (resizeEnd)="onResize($event)">
+  <div class="sidebar__tab__content">
+    <header class="sidebar__tab__header">
+      <strong>Project tree</strong>
+    </header>
+    <div class="sidebar__tab__body">
+      Hello worlde!
+    </div>
+  </div>
+</div>

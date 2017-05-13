@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     font: 10px 'Lato', 'Segoe UI', 'San Francisco', 'helvetica', sans-serif;
-    background: #1e1e1e;
+    background: #333333;
     color: #fff;
 }
 
@@ -28,6 +28,17 @@ button, a {
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #ADADAD;
+
+  &:hover, &:active {
+    background: #555;
+    color: white;
   }
 }
 

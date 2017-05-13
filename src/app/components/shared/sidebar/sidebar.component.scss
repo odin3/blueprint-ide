@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: auto;
+  height: 100%;
+}
+
+.sidebar__tabs {
+  display: inline-block;
+  width: auto;
+}
+
+.sidebar__tab {
+  display: block;
+  background: none;
+  border: none;
+  color: #ADADAD;
+  font-size: 16pt;
+  padding: 15px;
+
+  &.sidebar__tab--active {
+    color: white;
+  }
+
+  &:hover {
+    background: #555;
+    color: white;
+  }
+}
+
+.sidebar__content {
+  margin: auto;
+  min-width: 240px;
+  flex-grow: 1;
+  background: #252525;
+  height: 100%;
+}
+
+.sidebar__tab__header {
+  display: block;
+  background: #3b3b3b;
+  color: #ADADAD;
+  padding: 8px 10px;
+  font-size: 9pt;
+
+  strong {
+    text-transform: uppercase;
+  }
+}
