@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  user-select: none;
+  align-items: center;
+}
+
+.window__controls {
+  -webkit-app-region: no-drag;
+  color: white;
+  font-weight: bold;
+  &.row {
+    width: auto;
+  }
+}
+
+.window__title {
+  display: inline-block;
+  font-size: 10pt;
+}

@@ -1,0 +1,31 @@
+$box-size: 38px;
+$icon-size: 11pt;
+
+:host {
+  display: block;
+  float: left;
+  height: $box-size;
+  width: $box-size;
+}
+
+.window__control {
+  display: inline-block;
+  background: none;
+  color: #C5C5C5;
+  text-align: center;
+  font-size: $icon-size;
+  height: $box-size;
+  width: $box-size;
+  line-height: 100%;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    color: #fff;
+    background: #2D2D2D;
+  }
+
+  &.window__control--close:hover {
+    background: red;
+  }
+}

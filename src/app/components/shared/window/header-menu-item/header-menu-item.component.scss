@@ -1,0 +1,46 @@
+:host,
+.window-header__menu-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.window-header__dropdown {
+  display: none;
+}
+
+:host {
+  float: left;
+  width: auto;
+}
+
+.window-header__menu-item {
+  position: relative;
+}
+
+.window-header__menu-item__button {
+  display: inline-block;
+  text-align: center;
+  background-color: transparent;
+  color: #878787;
+  border: none;
+  height: 38px;
+  line-height: 100%;
+  padding: 0 15px;
+  font-size: 10pt;
+
+  &.window__header__menu__action--back {
+    color: #fff;
+    background-color: #007ACC;
+  }
+
+  &:hover {
+    background-color: #2D2D2D;
+    color: #fff;
+  }
+}
+
+.window-header__menu-item__label {
+  text-transform: uppercase;
+}

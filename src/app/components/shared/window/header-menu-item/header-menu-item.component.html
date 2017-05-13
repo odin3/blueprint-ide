@@ -1,0 +1,8 @@
+<li class="window-header__menu-item">
+    <button class="window-header__menu-item__button" (click)="select.emit()">
+      <span class="window-header__menu-item__label">{{label}}</span>
+    </button>
+    <ul class="window-header__dropdown">
+      <ng-content></ng-content>
+    </ul>
+</li>
