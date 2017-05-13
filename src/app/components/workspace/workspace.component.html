@@ -1,0 +1,52 @@
+<app-window title="TestWebProject1">
+  <div class="workspace">
+    <!-- #region Left Navbar -->
+    <sidebar class="workspace__aside" position="left" [showFirstTab]="false">
+      <sidebar-tab title="Project tree"
+                   icon="file-multiple">
+        <b>Tree</b>
+      </sidebar-tab>
+      <sidebar-tab title="Data sources"
+                   icon="share-variant">
+        <b>Sources</b>
+      </sidebar-tab>
+    </sidebar>
+    <!-- #endregion -->
+
+    <div class="workspace__container">
+      <!-- #region workspace -->
+      <blueprint>
+        <control-box title="OrderCallComponent"></control-box>
+        <control-box title="OnCall" target="clientNumber (string)" type="Function"></control-box>
+      </blueprint>
+      <!-- #endregion -->
+
+      <!-- #region Bottom Navbar -->
+      <sidebar class="workspace__aside" position="bottom" size="small">
+        <sidebar-tab title="Project tree"
+                      icon="file-multiple">
+          <b>Tree</b>
+        </sidebar-tab>
+        <sidebar-tab title="Data sources"
+                      icon="share-variant">
+          <b>Sources</b>
+        </sidebar-tab>
+      </sidebar>
+      <!-- #endregion -->
+    </div>
+
+    <!-- #region Right Navbar -->
+    <sidebar class="workspace__aside" position="right" [showFirstTab]="false">
+      <sidebar-tab title="Project tree"
+                   icon="file-multiple">
+        <b>Tree</b>
+      </sidebar-tab>
+      <sidebar-tab title="Data sources"
+                   icon="share-variant">
+        <b>Sources</b>
+      </sidebar-tab>
+    </sidebar>
+    <!-- #endregion -->
+  </div>
+
+</app-window>

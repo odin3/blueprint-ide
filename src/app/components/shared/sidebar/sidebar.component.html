@@ -10,8 +10,8 @@
 <div class="sidebar__content"
      #container
      mwlResizable
-     [ngClass]="{'hidden': visibleTabs === 0}"
-     [resizeEdges]="{bottom: false, right: true, top: false, left: false}"
+     [ngClass]="{'hidden': visibleTabs === 0, 'sidebar__content--right': isAtRight , 'sidebar__content--bottom': isAtBottom}"
+     [resizeEdges]="{bottom: false, right: isAtLeft, top: isAtBottom, left: isAtRight}"
      [enableGhostResize]="true"
      (resizeEnd)="onResize($event)">
   <ng-content select="sidebar-tab"></ng-content>

@@ -4,6 +4,16 @@
   flex-wrap: nowrap;
   margin: auto;
   height: 100%;
+
+  &[position="bottom"] {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+
+    .sidebar__tabs {
+      display: flex;
+    }
+  }
 }
 
 .sidebar__tabs {
@@ -31,8 +41,17 @@
 
 .sidebar__content {
   margin: auto;
-  min-width: 240px;
+  width: 240px;
   flex-grow: 1;
   background: #252525;
   height: 100%;
+  &.sidebar__content--right,
+  &.sidebar__content--bottom {
+    order: -1;
+  }
+
+  &.sidebar__content--bottom {
+    width: 100%;
+    height: 240px;
+  }
 }

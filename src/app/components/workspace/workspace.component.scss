@@ -1,11 +1,13 @@
 
-.editor {
+.workspace {
   display: flex;
   flex-wrap: nowrap;
   flex: 1;
 }
 
-.editor__workspace {
+.workspace__container {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   flex: 1;
   height: 100%;

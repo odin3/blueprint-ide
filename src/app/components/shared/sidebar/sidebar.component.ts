@@ -1,4 +1,13 @@
-import { Component, AfterViewInit, ViewChild, ContentChildren, ElementRef, QueryList } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  ContentChildren,
+  ElementRef,
+  QueryList,
+  Input
+} from '@angular/core';
+
 import { SidebarTabComponent } from './sidebar-tab/sidebar-tab.component';
 import { ResizeEvent } from 'angular-resizable-element';
 
@@ -10,6 +19,9 @@ import { ResizeEvent } from 'angular-resizable-element';
 
 export class SidebarComponent implements AfterViewInit {
 
+  @Input() position: string = 'left';
+  @Input() size: string = 'normal';
+  @Input() showFirstTab: boolean = true;
   @ViewChild('container') container: ElementRef;
   @ContentChildren(SidebarTabComponent) tabs: QueryList<SidebarTabComponent>;
 
@@ -18,11 +30,33 @@ export class SidebarComponent implements AfterViewInit {
 
   constructor() {}
 
+  get isSmall(): boolean {
+   return this.size.trim() === 'small';
+  }
+
+  get isAtRight(): boolean {
+    return this.isAtPosition('right');
+  }
+
+  get isAtLeft(): boolean {
+    return this.isAtPosition('left');
+  }
+
+  get isAtBottom(): boolean {
+    return this.isAtPosition('bottom');
+  }
+
+  isAtPosition(position: string) {
+    return this.position.trim() === position;
+  }
+
   ngAfterViewInit() {
     let i = 0;
     this.tabs.changes.subscribe(() => {
       this.updateTabs();
     });
+
+    this.updateTabs();
   }
 
   updateTabs() {
@@ -30,12 +64,12 @@ export class SidebarComponent implements AfterViewInit {
     this.tabButtons.splice(0, this.tabButtons.length);
 
     this.tabs.forEach((e) => {
-      let isVisible = (i <= 0);
+      let isVisible = (i < 1);
 
       this.tabButtons.push(e);
 
-      if (isVisible) {
-        e.visible = true;
+      if (this.showFirstTab && isVisible) {
+        this.toggleTab(e);
       }
 
       i++;
@@ -54,7 +88,12 @@ export class SidebarComponent implements AfterViewInit {
   }
 
   onResize(event: ResizeEvent) {
-    let width = Math.floor(event.rectangle.width);
-    this.container.nativeElement.style.width = `${width}px`;
+    if (this.isAtBottom) {
+      let height = Math.floor(event.rectangle.height);
+      this.container.nativeElement.style.height = `${height}px`;
+    } else {
+      let width = Math.floor(event.rectangle.width);
+      this.container.nativeElement.style.width = `${width}px`;
+    }
   }
 }
