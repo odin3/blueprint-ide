@@ -11,10 +11,6 @@ export class SidebarTabComponent implements OnInit {
   @Input() title: string;
   @Input() visible: boolean = false;
 
-  get iconClass(): string {
-    return `mdi mdi-${this.icon}`;
-  }
-
   constructor() {
 
   }

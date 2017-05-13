@@ -2,14 +2,24 @@
   <div class="workspace">
     <!-- #region Left Navbar -->
     <sidebar class="workspace__aside" position="left" [showFirstTab]="false">
-      <sidebar-tab title="Project tree"
-                   icon="file-multiple">
+      <sidebar-tab title="Project tree" icon="file-multiple">
         <b>Tree</b>
       </sidebar-tab>
-      <sidebar-tab title="Data sources"
-                   icon="share-variant">
+      <sidebar-tab title="Data sources" icon="database">
         <b>Sources</b>
       </sidebar-tab>
+      <sidebar-tab title="Favorites" icon="star">
+        <b>Sources</b>
+      </sidebar-tab>
+      <sidebar-tab title="Tasks" icon="format-list-checks">
+        <b>Tasks</b>
+      </sidebar-tab>
+      <sidebar-button title="Project Settings" icon="settings">
+        <b>Settings</b>
+      </sidebar-button>
+      <sidebar-button title="Extensions" icon="package-variant">
+        <b>Sources</b>
+      </sidebar-button>
     </sidebar>
     <!-- #endregion -->
 
@@ -22,13 +32,15 @@
       <!-- #endregion -->
 
       <!-- #region Bottom Navbar -->
-      <sidebar class="workspace__aside" position="bottom" size="small" [singleOnly]="true">
-        <sidebar-tab title="Project tree"
-                      icon="file-multiple">
+      <sidebar class="workspace__aside"
+               position="bottom"
+               size="small"
+               [showFirstTab]="false"
+               [singleOnly]="true">
+        <sidebar-tab title="Project tree" icon="file-multiple">
           <b>Tree</b>
         </sidebar-tab>
-        <sidebar-tab title="Data sources"
-                      icon="share-variant">
+        <sidebar-tab title="Data sources" icon="share-variant">
           <b>Sources</b>
         </sidebar-tab>
       </sidebar>
@@ -36,13 +48,13 @@
     </div>
 
     <!-- #region Right Navbar -->
-    <sidebar class="workspace__aside" position="right" [showFirstTab]="false">
-      <sidebar-tab title="Project tree"
-                   icon="file-multiple">
+    <sidebar class="workspace__aside"
+             position="right"
+             [showFirstTab]="false">
+      <sidebar-tab title="Project tree" icon="file-multiple">
         <b>Tree</b>
       </sidebar-tab>
-      <sidebar-tab title="Data sources"
-                   icon="share-variant">
+      <sidebar-tab title="Properties" icon="share-variant">
         <b>Sources</b>
       </sidebar-tab>
     </sidebar>

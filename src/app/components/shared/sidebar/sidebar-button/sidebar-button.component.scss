@@ -1,0 +1,26 @@
+.sidebar__tab {
+  display: block;
+  background: none;
+  border: none;
+  color: #ADADAD;
+  font-size: 16pt;
+  padding: 15px;
+
+  &.sidebar__tab--active {
+    color: white;
+  }
+
+  &:hover {
+    background: #555;
+    color: white;
+  }
+
+  &.sidebar__tab--small {
+    font-size: 9.75pt;
+    padding: 8px 5px;
+  }
+}
+
+:host {
+  display: block;
+}
