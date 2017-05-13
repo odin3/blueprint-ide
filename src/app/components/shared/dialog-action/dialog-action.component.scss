@@ -1,0 +1,46 @@
+/** TEST **/
+:host {
+  display: block;
+  margin: 15px 0;
+}
+
+.dialog__action {
+  display: block;
+  width: 100%;
+  color: #949494;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  padding: 12px;
+  border-radius: 4px;
+
+  &:not(:disabled):hover {
+    color: white;
+    background-color: #777;
+  }
+}
+
+strong {
+  font-size: 14pt;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.mdi {
+  font-size: 37pt;
+  position: relative;
+  bottom: 3pt;
+}
+
+.dialog__action__text {
+  padding-left: 10px;
+}
+
+.dialog__action__icon {
+  height: 48px;
+}

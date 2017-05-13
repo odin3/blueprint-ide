@@ -1,3 +1,4 @@
+import { NgDraggableModule } from 'angular-draggable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*
  * Angular Modules
@@ -18,7 +19,8 @@ import { authStore, authInitialState } from './store/auth.store';
 /**
  * Import our child components
  */
-import { WellcomeComponent } from './components/wellcome/wellcome.component';
+import { components } from './components';
+import { services } from './services';
 import { AppComponent } from './components/app.component';
 
 import { routes } from './app.routes';
@@ -38,11 +40,12 @@ import { Authentication } from './services/authentication';
         ReactiveFormsModule,
         HttpModule,
         BrowserAnimationsModule,
+        NgDraggableModule,
         RouterModule.forRoot(routes, { useHash: true }),
         StoreModule.provideStore({ authStore }, { authStore: authInitialState }),
     ],
-    providers: [Authentication],
-    declarations: [AppComponent, WellcomeComponent],
+    providers: [Authentication, ...services],
+    declarations: [...components],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

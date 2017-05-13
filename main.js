@@ -13,7 +13,8 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  // {width: 800, height: 600}
+  mainWindow = new BrowserWindow({width: 658, height: 135})
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({

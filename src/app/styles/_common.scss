@@ -12,6 +12,23 @@ body, html {
 
 * {
   font-family: 'Lato', 'Segoe UI', 'San Francisco', 'helvetica', sans-serif;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+button, a {
+  cursor: pointer;
+  &:focus, &:active {
+    outline: 0;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 }
 
 .blueprint {

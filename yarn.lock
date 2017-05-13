@@ -57,6 +57,12 @@
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-2.2.1.tgz#316ec1e43aa5a0166e5e6e1aa2c34a4049386510"
 
+"@types/electron@^1.4.37":
+  version "1.4.37"
+  resolved "https://registry.yarnpkg.com/@types/electron/-/electron-1.4.37.tgz#cfff6958f224842c1742a6e4873ed7135e5f2ff3"
+  dependencies:
+    "@types/node" "*"
+
 "@types/hammerjs@^2.0.33":
   version "2.0.34"
   resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.34.tgz#9cbac4f41cb039436141785e1be50b3ab10a04a9"
@@ -154,6 +160,10 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4, amdefine@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular-draggable@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/angular-draggable/-/angular-draggable-1.0.1.tgz#5841361841ae84cc67e7300deefe2c632d6ab59f"
 
 angular2-template-loader@^0.6.0:
   version "0.6.2"
@@ -2549,6 +2559,10 @@ map-obj@^1.0.0, map-obj@^1.0.1:
 math-expression-evaluator@^1.2.14:
   version "1.2.16"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.16.tgz#b357fa1ca9faefb8e48d10c14ef2bcb2d9f0a7c9"
+
+mdi@^1.9.33:
+  version "1.9.33"
+  resolved "https://registry.yarnpkg.com/mdi/-/mdi-1.9.33.tgz#3caf6d95fc6b800633630bd62ba0cf1fbde6b2e2"
 
 media-typer@0.3.0:
   version "0.3.0"

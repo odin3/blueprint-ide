@@ -17,8 +17,8 @@ app.on('window-all-closed', () => {
 const createWindow = () => {
   // Initialize the window to our specified dimensions
   mainWindow = new BrowserWindow({
-    width: 640,
-    height: 480,
+    width: 600,
+    height: 123,
     frame: false,
     resizable: false
   });

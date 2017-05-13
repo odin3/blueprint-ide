@@ -1,0 +1,36 @@
+$icon-size: 18px;
+$background-color: #777;
+$font-color: #fff;
+
+:host {
+  background-color: $background-color;
+  border-radius: 4px;
+  opacity: 0.1;
+  position: fixed;
+  transition: opacity 0.2s ease-in 0s;
+  top: 0;
+  left: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  background: transparent;
+  border: 1px solid $font-color;
+  color: $font-color;
+  padding: 8px;
+  font-size: $icon-size;
+  text-align: center;
+  margin: 8px;
+  border-radius: 4px;
+  line-height: 100%;
+
+  &:hover, &:focus {
+    background: $font-color;
+    color: $background-color;
+  }
+}
