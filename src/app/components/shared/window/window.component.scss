@@ -1,7 +1,18 @@
-:root {
-  height: 100%;
+:host, .window {
+  display: block;
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.window {
+  display: flex;
+  flex-flow: column;
+}
+
+.window__content {
+  flex: 1;
+  overflow: auto;
 }

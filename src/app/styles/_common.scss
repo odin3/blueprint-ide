@@ -1,13 +1,13 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
-    min-height: 100%;
-    min-width: 100%;
     font: 10px 'Lato', 'Segoe UI', 'San Francisco', 'helvetica', sans-serif;
     background: #1e1e1e;
     color: #fff;
+}
+
+app, .app {
+  display: block;
 }
 
 * {

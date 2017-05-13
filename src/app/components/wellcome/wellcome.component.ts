@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { BrowserWindowService } from '../../services/electron';
 
@@ -8,9 +9,13 @@ import { BrowserWindowService } from '../../services/electron';
   styleUrls: ['./wellcome.component.scss']
 })
 export class WellcomeComponent implements OnInit {
-  constructor(private window: BrowserWindowService) { }
+  constructor(private window: BrowserWindowService, private router: Router) { }
 
   ngOnInit() {
     this.window.setSize(640, 480);
+  }
+
+  openProject() {
+    this.router.navigateByUrl('/editor');
   }
 }

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { WellcomeComponent } from './components/wellcome/wellcome.component';
-import { WindowComponent } from './components/shared/window/window.component';
+import { EditorComponent } from './components/editor';
 
 export const routes: Routes = [
-  { path: '', component:  WindowComponent},
-  { path: 'wellcome', component: WellcomeComponent}
+  { path: '', pathMatch: 'full', component:  WellcomeComponent},
+  { path: 'editor', component: EditorComponent}
 ];
