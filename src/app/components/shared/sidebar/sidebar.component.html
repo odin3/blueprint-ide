@@ -1,10 +1,11 @@
 <div class="sidebar__tabs">
   <button *ngFor="let tab of tabs;"
           class="sidebar__tab"
-          [ngClass]="{'sidebar__tab--active': tab.visible}"
+          [ngClass]="{'sidebar__tab--active': tab.visible, 'sidebar__tab--small': isSmall}"
           [title]="tab.title"
           (click)="toggleTab(tab)">
     <i [class]="tab.iconClass"></i>
+    <span *ngIf="isSmall">{{tab.title}}</span>
   </button>
 </div>
 <div class="sidebar__content"

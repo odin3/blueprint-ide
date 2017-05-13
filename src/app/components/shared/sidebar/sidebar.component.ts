@@ -8,6 +8,8 @@ import {
   Input
 } from '@angular/core';
 
+import { isNil } from 'lodash';
+
 import { SidebarTabComponent } from './sidebar-tab/sidebar-tab.component';
 import { ResizeEvent } from 'angular-resizable-element';
 
@@ -22,16 +24,19 @@ export class SidebarComponent implements AfterViewInit {
   @Input() position: string = 'left';
   @Input() size: string = 'normal';
   @Input() showFirstTab: boolean = true;
+  @Input() singleOnly: boolean = false;
+
   @ViewChild('container') container: ElementRef;
   @ContentChildren(SidebarTabComponent) tabs: QueryList<SidebarTabComponent>;
 
+  currentTab: SidebarTabComponent = null;
   tabButtons: SidebarTabComponent[] = [];
   visibleTabs: number = 0;
 
-  constructor() {}
+  constructor() { }
 
   get isSmall(): boolean {
-   return this.size.trim() === 'small';
+    return this.size.trim() === 'small';
   }
 
   get isAtRight(): boolean {
@@ -78,12 +83,31 @@ export class SidebarComponent implements AfterViewInit {
 
   toggleTab(tab: SidebarTabComponent) {
     let showTab = !tab.visible;
-    tab.visible = showTab;
 
-    if (showTab) {
-      this.visibleTabs++;
+    if (this.singleOnly === true) {
+
+      if (this.currentTab === tab) {
+        if (!isNil(this.currentTab)) {
+          this.currentTab.visible = showTab;
+        }
+        this.visibleTabs = (showTab) ? 1 : 0;
+      } else {
+        if (!isNil(this.currentTab)) {
+          this.currentTab.visible = false;
+        }
+        this.currentTab = tab;
+        this.visibleTabs = 1;
+        tab.visible = true;
+      }
+
     } else {
-      this.visibleTabs--;
+      tab.visible = showTab;
+
+      if (showTab) {
+        this.visibleTabs++;
+      } else {
+        this.visibleTabs--;
+      }
     }
   }
 

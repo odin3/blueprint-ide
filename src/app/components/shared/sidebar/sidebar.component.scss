@@ -37,6 +37,11 @@
     background: #555;
     color: white;
   }
+
+  &.sidebar__tab--small {
+    font-size: 9.75pt;
+    padding: 8px 5px;
+  }
 }
 
 .sidebar__content {
