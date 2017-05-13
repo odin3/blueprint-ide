@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.sidebar__tab__header {
+  display: block;
+  background: #3b3b3b;
+  color: #ADADAD;
+  padding: 8px 10px;
+  font-size: 9pt;
+
+  strong {
+    text-transform: uppercase;
+  }
+}

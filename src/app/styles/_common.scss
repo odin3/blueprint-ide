@@ -31,6 +31,10 @@ button, a {
   }
 }
 
+*.hidden {
+  display: none;
+}
+
 .button {
   background: none;
   border: none;

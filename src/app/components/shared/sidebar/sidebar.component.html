@@ -1,26 +1,18 @@
 <div class="sidebar__tabs">
-  <button class="sidebar__tab sidebar__tab--active">
-    <i class="mdi mdi-file-multiple"></i>
-  </button>
-  <button class="sidebar__tab">
-    <i class="mdi mdi-share-variant"></i>
-  </button>
-  <button class="sidebar__tab">
-    <i class="mdi mdi-star"></i>
+  <button *ngFor="let tab of tabs;"
+          class="sidebar__tab"
+          [ngClass]="{'sidebar__tab--active': tab.visible}"
+          [title]="tab.title"
+          (click)="toggleTab(tab)">
+    <i [class]="tab.iconClass"></i>
   </button>
 </div>
 <div class="sidebar__content"
      #container
      mwlResizable
+     [ngClass]="{'hidden': visibleTabs === 0}"
      [resizeEdges]="{bottom: false, right: true, top: false, left: false}"
      [enableGhostResize]="true"
      (resizeEnd)="onResize($event)">
-  <div class="sidebar__tab__content">
-    <header class="sidebar__tab__header">
-      <strong>Project tree</strong>
-    </header>
-    <div class="sidebar__tab__body">
-      Hello worlde!
-    </div>
-  </div>
+  <ng-content select="sidebar-tab"></ng-content>
 </div>
