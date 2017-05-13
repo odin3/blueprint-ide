@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { isArray } from 'lodash';
 
 import { BrowserWindowService } from '../../../../services/electron';
@@ -11,6 +11,7 @@ import { BrowserWindowService } from '../../../../services/electron';
 })
 
 export class WindowHeaderComponent implements OnInit {
+  @Input() title: string;
 
   public maximized: boolean = false;
 
@@ -21,6 +22,10 @@ export class WindowHeaderComponent implements OnInit {
 
   public constructor(win: BrowserWindowService) {
     this.window = win.window;
+  }
+
+  public get fullTitle(): string {
+    return `${this.title} - Blueprint`;
   }
 
   public ngOnInit() {

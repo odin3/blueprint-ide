@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { BrowserWindowService } from '../../../services/electron';
 
@@ -9,6 +9,7 @@ import { BrowserWindowService } from '../../../services/electron';
 })
 
 export class WindowComponent implements OnInit {
+  @Input() title: string = '';
 
   constructor(private win: BrowserWindowService) {
 

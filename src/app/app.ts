@@ -1,4 +1,6 @@
 import { NgDraggableModule } from 'angular-draggable';
+import { AngularDraggableModule } from 'angular2-draggable';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*
  * Angular Modules
@@ -41,6 +43,7 @@ import { Authentication } from './services/authentication';
         HttpModule,
         BrowserAnimationsModule,
         NgDraggableModule,
+        AngularDraggableModule,
         RouterModule.forRoot(routes, { useHash: true }),
         StoreModule.provideStore({ authStore }, { authStore: authInitialState }),
     ],

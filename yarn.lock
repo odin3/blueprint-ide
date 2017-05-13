@@ -165,6 +165,10 @@ angular-draggable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/angular-draggable/-/angular-draggable-1.0.1.tgz#5841361841ae84cc67e7300deefe2c632d6ab59f"
 
+angular2-draggable@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/angular2-draggable/-/angular2-draggable-1.0.2.tgz#1027157ec5f95b01494cb2bf4e8a8022c90c53cc"
+
 angular2-template-loader@^0.6.0:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/angular2-template-loader/-/angular2-template-loader-0.6.2.tgz#c0d44e90fff0fac95e8b23f043acda7fd1c51d7c"

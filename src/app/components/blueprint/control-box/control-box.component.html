@@ -1,0 +1,25 @@
+<div class="control-box" ngDraggable>
+  <div class="control-box__header">
+    <span class="control-box__type" [title]="type">{{typeChar}}</span>
+    <strong #Handle>{{title}}</strong>
+    <p *ngIf="target.length">Target is {{target}}</p>
+  </div>
+  <div class="control-box__body row">
+    <div class="col-6">
+      <ul class="control-box__args">
+        <li class="control-box__arg">
+          <i class="mdi mdi-arrow-right-drop-circle-outline pull-left"></i>
+          <span>Input 1</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="control-box__args">
+        <li class="control-box__arg text-right">
+          <i class="mdi mdi-flash pull-right"></i>
+          <span>OnSubmit</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
