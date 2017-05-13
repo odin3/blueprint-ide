@@ -7,7 +7,21 @@
 <div class="window__title">Window</div>
 
 <div class="window__controls row">
-  <window-control icon="chevron-down" label="Minimize"></window-control>
-  <window-control icon="window-restore" label="Resize"></window-control>
-  <window-control icon="close" label="Close"></window-control>
+  <window-control icon="chevron-down"
+                  label="Minimize"
+                  (click)="minimize()"></window-control>
+
+  <window-control *ngIf="!maximized"
+                  icon="window-maximize"
+                  label="Maximize"
+                  (click)="maximize()"></window-control>
+
+  <window-control *ngIf="maximized"
+                  icon="window-restore"
+                  label="Restore"
+                  (click)="restore()"></window-control>
+
+  <window-control icon="close"
+                  label="Close"
+                  (click)="close()"></window-control>
 </div>
