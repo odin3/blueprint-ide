@@ -15,7 +15,7 @@ export class WindowComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.win.setSize(640, 480, false, true);
+    this.win.setSize(1024, 768, false, true);
     this.win.window.setMovable(true);
     this.win.window.setResizable(true);
   }
