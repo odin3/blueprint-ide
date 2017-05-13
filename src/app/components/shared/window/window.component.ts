@@ -9,7 +9,7 @@ import { BrowserWindowService } from '../../../services/electron';
 })
 
 export class WindowComponent implements OnInit {
-  @Input() title: string = '';
+  @Input() label: string = '';
 
   constructor(private win: BrowserWindowService) {
 

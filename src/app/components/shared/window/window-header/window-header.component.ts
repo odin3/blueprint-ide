@@ -11,7 +11,7 @@ import { BrowserWindowService } from '../../../../services/electron';
 })
 
 export class WindowHeaderComponent implements OnInit {
-  @Input() title: string;
+  @Input() label: string;
 
   public maximized: boolean = false;
 
@@ -25,7 +25,7 @@ export class WindowHeaderComponent implements OnInit {
   }
 
   public get fullTitle(): string {
-    return `${this.title} - Blueprint`;
+    return `${this.label} - Blueprint`;
   }
 
   public ngOnInit() {
