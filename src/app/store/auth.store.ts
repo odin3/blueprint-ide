@@ -21,7 +21,7 @@ export const authStore: ActionReducer<Object> = (state: Object = authInitialStat
 
         case AUTH_ACTION_TYPES.CHANGE_NAME:
             return Object.assign(state, { username: action.payload.username });
-            
+
         default:
             return state;
     }

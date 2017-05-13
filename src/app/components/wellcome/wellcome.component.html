@@ -14,9 +14,10 @@
   <dialog-action iconName="file-plus"
                  title="Create a new project"
                  description="Start building a new Angular application"
-                 (click)="openProject();"></dialog-action>
+                 (click)="createProject()"></dialog-action>
 
   <dialog-action iconName="file-xml"
+                 (click)="openProject()"
                  title="Open recent project"
                  description="Continue work on recent opened project"></dialog-action>
 

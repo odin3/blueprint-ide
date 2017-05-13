@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { Store } from '@ngrx/store';
 import { isNil } from 'lodash';
 
 const electron = require('electron');
@@ -18,6 +18,10 @@ export class BrowserWindowService {
 
   get window(): Electron.BrowserWindow {
     return remote.getCurrentWindow();
+  }
+
+  get dialog(): Electron.Dialog {
+    return remote.dialog;
   }
 
   setSize(height, width, animate: boolean = false, keepCenter: boolean = true) {

@@ -16,7 +16,8 @@ import { HttpModule } from '@angular/http';
 
 // Setup redux with ngrx
 import { Store, StoreModule } from '@ngrx/store';
-import { authStore, authInitialState } from './store/auth.store';
+// import { authStore, authInitialState } from './store/auth.store';
+import { workSpaceInitialState, workSpaceStore } from './store/workspace.store';
 
 /**
  * Import our child components
@@ -30,7 +31,7 @@ import { routes } from './app.routes';
 /**
  * Import the authentication service to be injected into our component
  */
-import { Authentication } from './services/authentication';
+// import { Authentication } from './services/authentication';
 
 /*
  * provide('AppStore', { useValue: appStore }),
@@ -45,9 +46,9 @@ import { Authentication } from './services/authentication';
         NgDraggableModule,
         AngularDraggableModule,
         RouterModule.forRoot(routes, { useHash: true }),
-        StoreModule.provideStore({ authStore }, { authStore: authInitialState }),
+        StoreModule.provideStore({ workSpaceStore }, { workSpaceStore: workSpaceInitialState }),
     ],
-    providers: [Authentication, ...services],
+    providers: [...services],
     declarations: [...components],
     bootstrap: [AppComponent]
 })

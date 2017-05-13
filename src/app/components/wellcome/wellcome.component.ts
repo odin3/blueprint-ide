@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { BrowserWindowService } from '../../services/electron';
+import { WorkspaceManagerService } from '../../services/workspace-manager';
+
+const dialog = require('electron').dialog;
 
 @Component({
   selector: 'wellcome',
@@ -9,13 +12,34 @@ import { BrowserWindowService } from '../../services/electron';
   styleUrls: ['./wellcome.component.scss']
 })
 export class WellcomeComponent implements OnInit {
-  constructor(private window: BrowserWindowService, private router: Router) { }
+  constructor(
+    private win: BrowserWindowService,
+    private workspace: WorkspaceManagerService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
-    this.window.setSize(640, 480);
+    this.win.setSize(640, 480);
   }
 
   openProject() {
-    this.router.navigateByUrl('/editor');
+    let dir = this.win.dialog.showOpenDialog(this.win.window, {
+      properties: ['openDirectory']
+    });
+
+    if (dir.length === 0) {
+      return;
+    }
+
+    if (this.workspace.isProjectDirectoryValid(dir[0])) {
+      this.workspace.setProject(dir[0]);
+      this.router.navigateByUrl('/editor');
+    }
+
+    // this.router.navigateByUrl('/editor');
+  }
+
+  createProject() {
+
   }
 }
