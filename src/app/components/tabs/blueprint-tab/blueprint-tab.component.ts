@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ITabContext } from '../../tab';
 
 @Component({
-  selector: 'app-blueprint-tab',
+  selector: 'blueprint-tab',
   templateUrl: './blueprint-tab.component.html',
   styleUrls: ['./blueprint-tab.component.scss']
 })
