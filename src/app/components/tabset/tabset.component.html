@@ -2,7 +2,7 @@
   <tab-header *ngFor="let tab of tabs; let i = index;"
               [label]="tab.label"
               [active]="currentTab === i"
-              [icon]="getIcon(tab.type)"
+              [icon]="getIcon(tab.tabType)"
               (select)="currentTab = i"
               (close)="closeTab(i);"></tab-header>
 </div>
@@ -11,9 +11,9 @@
   <ng-template ngFor let-tab [ngForOf]="tabs" let-i="index">
     <dynamic-tab [label]="tab.label"
                  [ngClass]="{'hidden': currentTab !== i}"
-                 [tabType]="tab.type"
+                 [tabType]="tab.tabType"
                  [classType]="tab.classType"
                  [file]="tab.file"></dynamic-tab>
   </ng-template>
-  <tabset-wellcome *ngIf="tabs.length === 0"></tabset-wellcome>
+  <tabset-wellcome *ngIf="tabs.length === 0" (open)="makeTab();"></tabset-wellcome>
 </div>

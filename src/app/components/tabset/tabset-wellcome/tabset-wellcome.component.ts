@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'tabset-wellcome',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TabsetWellcomeComponent implements OnInit {
+  @Output()
+  public open: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {
 
