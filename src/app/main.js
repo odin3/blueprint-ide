@@ -1,3 +1,5 @@
+const path = require('path');
+
 /**
  * Include our app
  */
@@ -5,6 +7,11 @@ const {app, BrowserWindow } = require('electron');
 
 // browser-window creates a native window
 let mainWindow = null;
+
+function getApplicationIcon() {
+  let location =  '../assets/images/logo.png';
+  return path.join(__dirname, location);
+}
 
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
@@ -20,6 +27,7 @@ const createWindow = () => {
     width: 600,
     height: 123,
     frame: false,
+    icon: getApplicationIcon(),
     resizable: false
   });
 

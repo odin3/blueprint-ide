@@ -11,13 +11,20 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+function getApplicationIcon() {
+  let location =  '../assets/images/logo.png';
+  return path.join(__dirname, location);
+}
+
 function createWindow () {
+  console.log(getApplicationIcon());
   // Create the browser window.
   // {width: 800, height: 600}
   mainWindow = new BrowserWindow({
     width: 658,
     height: 135,
     frame: false,
+    icon: getApplicationIcon(),
     webPreferences: {
       experimentalFeatures: true
     }
