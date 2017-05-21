@@ -56,3 +56,21 @@
   color: inherit;
   padding-left: 5px;
 }
+
+// tab container
+.tabset__container {
+  display: flex;
+  margin: auto;
+  overflow: auto;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.tab__container {
+  display: flex;
+  flex: 1;
+  background-color: #1E1E1E;
+  width: 100%;
+}
