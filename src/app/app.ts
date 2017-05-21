@@ -23,7 +23,7 @@ import { workSpaceInitialState, workSpaceStore } from './store/workspace.store';
 /**
  * Import our child components
  */
-import { components } from './components';
+import { components, entryComponents } from './components';
 import { services } from './services';
 import { AppComponent } from './components/app.component';
 
@@ -52,7 +52,8 @@ import { routes } from './app.routes';
     ],
     providers: [...services],
     declarations: [...components],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents: [...entryComponents]
 })
 export class AppModule { }
 platformBrowserDynamic().bootstrapModule(AppModule);

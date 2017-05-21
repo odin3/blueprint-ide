@@ -1,4 +1,8 @@
-import { Component, OnInit, AfterContentInit, Output } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
+
+import { ITabContext, TabTypes, getTabIcon, tabComponents } from '../tab';
+import { BlueprintTabComponent } from 'app/components/tabs/blueprint-tab/blueprint-tab.component';
+
 
 @Component({
   selector: 'tabset',
@@ -8,15 +12,29 @@ import { Component, OnInit, AfterContentInit, Output } from '@angular/core';
 
 export class TabsetComponent implements OnInit, AfterContentInit {
 
-  constructor() {
+  public tabs: ITabContext[] = [];
+  public currentTab: number = 0;
+
+  private lastId: number = 0;
+
+  public constructor() {
 
   }
 
-  ngOnInit() {
+  public ngOnInit() {
 
   }
 
-  ngAfterContentInit() {
+  public ngAfterContentInit() {
+    this.createTab('test label', 'file.txt', BlueprintTabComponent, TabTypes.TAB_CODE);
+  }
 
+  public getIcon(type: number): string {
+    return getTabIcon(type);
+  }
+
+  public createTab(label: string, file: string, classType: any, type: number = TabTypes.TAB_COMMON) {
+    let id = +this.lastId;
+    this.tabs.push({id, label, file, type});
   }
 }

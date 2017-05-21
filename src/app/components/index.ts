@@ -4,6 +4,7 @@ import { sharedComponents } from './shared';
 import { workspaceComponents } from './workspace';
 import { tabsetComponents } from './tabset';
 import { tabComponents } from './tab';
+import { tabsComponents } from './tabs';
 // import { sidebarComponents, sidebarServices } from './sidebar-items';
 
 
@@ -22,4 +23,8 @@ export const components = [
 
 export const providers = [
   // ...sidebarServices
+];
+
+export const entryComponents = [
+  tabComponents
 ];

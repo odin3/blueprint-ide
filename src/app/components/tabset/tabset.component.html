@@ -1,19 +1,22 @@
 <div class="tabset__header">
-  <tab-header label="AppComponent"
-              [active]="true"
-              icon="target"></tab-header>
-  <tab-header label="AppComponent"
-              icon="code-braces"></tab-header>
-  <tab-header label="AppComponent"
-              icon="code-tags"></tab-header>
+  <tab-header *ngFor="let tab of tabs"
+              [label]="tab.label"
+              [active]="currentTab === tab.id"
+              [icon]="getIcon(tab.type)"></tab-header>
 </div>
 
 <div class="tabset__container">
-  <div class="tab__container">
+  <ng-template ngFor let-tab [ngForOf]="tabs">
+    <dynamic-tab [label]="tab.label"
+              [tabType]="tab.type"
+              [type]="tab.classType"
+              [file]="tab.file"></dynamic-tab>
+  </ng-template>
+  <!--<tab>
     <blueprint>
     <control-box title="OrderCallComponent"></control-box>
       <control-box title="OnCall" target="clientNumber (string)" type="Function"></control-box>
     </blueprint>
-  </div>
+  </tab>-->
   <!--<tabset-wellcome></tabset-wellcome>-->
 </div>
