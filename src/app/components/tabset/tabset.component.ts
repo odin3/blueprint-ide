@@ -35,7 +35,10 @@ export class TabsetComponent implements OnInit, AfterContentInit {
   }
 
   public createTab(label: string, file: string, classType: any, type: number = TabTypes.TAB_COMMON) {
-    let id = +this.lastId;
-    this.tabs.push({id, label, file, classType, type});
+    this.tabs.push({label, file, classType, type});
+  }
+
+  public closeTab(tabIndex: number) {
+    this.tabs.splice(tabIndex, 1);
   }
 }

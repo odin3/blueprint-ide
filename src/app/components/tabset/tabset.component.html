@@ -1,22 +1,19 @@
 <div class="tabset__header">
-  <tab-header *ngFor="let tab of tabs"
+  <tab-header *ngFor="let tab of tabs; let i = index;"
               [label]="tab.label"
-              [active]="currentTab === tab.id"
-              [icon]="getIcon(tab.type)"></tab-header>
+              [active]="currentTab === i"
+              [icon]="getIcon(tab.type)"
+              (select)="currentTab = i"
+              (close)="closeTab(i);"></tab-header>
 </div>
 
 <div class="tabset__container">
-  <ng-template ngFor let-tab [ngForOf]="tabs">
+  <ng-template ngFor let-tab [ngForOf]="tabs" let-i="index">
     <dynamic-tab [label]="tab.label"
-              [tabType]="tab.type"
-              [classType]="tab.classType"
-              [file]="tab.file"></dynamic-tab>
+                 [ngClass]="{'hidden': currentTab !== i}"
+                 [tabType]="tab.type"
+                 [classType]="tab.classType"
+                 [file]="tab.file"></dynamic-tab>
   </ng-template>
-  <!--<tab>
-    <blueprint>
-    <control-box title="OrderCallComponent"></control-box>
-      <control-box title="OnCall" target="clientNumber (string)" type="Function"></control-box>
-    </blueprint>
-  </tab>-->
-  <!--<tabset-wellcome></tabset-wellcome>-->
+  <tabset-wellcome *ngIf="tabs.length === 0"></tabset-wellcome>
 </div>

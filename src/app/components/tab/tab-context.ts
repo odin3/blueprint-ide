@@ -1,5 +1,4 @@
 export interface ITabContext {
-  id?: number;
   classType?: any;
   label: string;
   file: string;
