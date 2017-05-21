@@ -3,6 +3,7 @@ import { wellcomeComponents } from './wellcome';
 import { sharedComponents } from './shared';
 import { workspaceComponents } from './workspace';
 import { tabsetComponents } from './tabset';
+import { tabComponents } from './tab';
 // import { sidebarComponents, sidebarServices } from './sidebar-items';
 
 
@@ -14,6 +15,7 @@ export const components = [
   ...sharedComponents,
   ...workspaceComponents,
   ...tabsetComponents,
+  ...tabComponents,
   // ...sidebarComponents,
   AppComponent
 ];

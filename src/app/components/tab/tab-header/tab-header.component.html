@@ -1,0 +1,7 @@
+<div class="tab__control" [ngClass]="{'tab__control--active': active}">
+  <i [class]="iconClass"></i>
+  <span class="tab__title" (click)="select.emit()">{{label}}</span>
+  <button class="tab__close" (click)="close.emit();" title="Close tab">
+    <i class="mdi mdi-close"></i>
+  </button>
+</div>

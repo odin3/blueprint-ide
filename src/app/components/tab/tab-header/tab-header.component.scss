@@ -1,0 +1,52 @@
+:host {
+  cursor: pointer;
+
+  &:hover {
+    .tab__close {
+      opacity: 1;
+    }
+  }
+}
+
+.tab__control {
+  border-right: 1px solid #1E1E1E;
+  background-color: #2D2D2D;
+  color: #8F8F8F;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 9pt;
+
+  &.tab__control--active {
+    .tab__close {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    background-color: #3D3D3D;
+  }
+
+  &.tab__control--active {
+    color: #fff;
+    background-color: #1E1E1E;
+
+    .tab__close {
+      opacity: 1;
+    }
+  }
+}
+
+.tab__close {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  border: none;
+  float: right;
+  color: inherit;
+  padding-left: 5px;
+  opacity: 0;
+
+  &:hover {
+    color: white;
+  }
+}
