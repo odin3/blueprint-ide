@@ -1,6 +1,6 @@
 export const TabIcons = [
   'tab',
-  'braces',
+  'code-braces',
   'tags',
   'target'
 ];

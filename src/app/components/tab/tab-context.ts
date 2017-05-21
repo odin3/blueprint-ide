@@ -3,6 +3,6 @@ export interface ITabContext {
   label: string;
   file: string;
   args?: any;
-  type?: number;
+  tabType?: number;
   icon?: string;
 }
