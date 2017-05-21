@@ -2,6 +2,7 @@ import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 import { ITabContext, TabTypes, getTabIcon, tabComponents } from '../tab';
 import { BlueprintTabComponent } from 'app/components/tabs/blueprint-tab/blueprint-tab.component';
+import { DynamicTabComponent } from '../tab';
 
 
 @Component({
@@ -35,6 +36,6 @@ export class TabsetComponent implements OnInit, AfterContentInit {
 
   public createTab(label: string, file: string, classType: any, type: number = TabTypes.TAB_COMMON) {
     let id = +this.lastId;
-    this.tabs.push({id, label, file, type});
+    this.tabs.push({id, label, file, classType, type});
   }
 }

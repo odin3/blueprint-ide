@@ -11,12 +11,13 @@ import { tabsComponents } from './tabs';
 import { AppComponent } from './app.component';
 
 export const components = [
+  ...tabComponents,
+  ...tabsComponents,
+  ...tabsetComponents,
+  ...sharedComponents,
   ...blueprintComponents,
   ...wellcomeComponents,
-  ...sharedComponents,
   ...workspaceComponents,
-  ...tabsetComponents,
-  ...tabComponents,
   // ...sidebarComponents,
   AppComponent
 ];
@@ -26,5 +27,5 @@ export const providers = [
 ];
 
 export const entryComponents = [
-  tabComponents
+  ...tabsComponents
 ];

@@ -29,7 +29,7 @@ export class DynamicTabComponent implements AfterViewInit, OnDestroy, OnChanges 
   public label: string = 'title';
 
   @Input()
-  public type;
+  public classType;
 
   @Input()
   public tabType: number = TabTypes.TAB_COMMON;
@@ -54,7 +54,7 @@ export class DynamicTabComponent implements AfterViewInit, OnDestroy, OnChanges 
       this.cmpRef.destroy();
     }
 
-    let factory = this.componentFactoryResolver.resolveComponentFactory(this.type);
+    let factory = this.componentFactoryResolver.resolveComponentFactory(this.classType);
     this.cmpRef = this.target.createComponent(factory);
 
     // to access the created instance use
