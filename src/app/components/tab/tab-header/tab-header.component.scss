@@ -1,5 +1,6 @@
 :host {
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     .tab__close {
@@ -9,17 +10,24 @@
 }
 
 .tab__control {
+  position: relative;
   border-right: 1px solid #1E1E1E;
   background-color: #2D2D2D;
   color: #8F8F8F;
   box-sizing: border-box;
   padding: 8px;
   font-size: 9pt;
+  transition: top 0.1s ease-out 0s;
+  top: 0%;
 
   &.tab__control--active {
     .tab__close {
       opacity: 1;
     }
+  }
+
+  &.tab__control--closing {
+    top: 100%;
   }
 
   &:hover {

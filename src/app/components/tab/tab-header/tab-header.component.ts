@@ -22,6 +22,8 @@ export class TabHeaderComponent implements OnInit {
   @Input()
   public active: boolean = false;
 
+  public isClosing: boolean = false;
+
   public get iconClass(): string {
     return `mdi mdi-${this.icon} tab__icon`;
   }
@@ -32,5 +34,10 @@ export class TabHeaderComponent implements OnInit {
 
   public ngOnInit() {
 
+  }
+
+  public onClose() {
+    this.isClosing = true;
+    this.close.emit();
   }
 }
