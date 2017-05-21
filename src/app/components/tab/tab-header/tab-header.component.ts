@@ -38,6 +38,5 @@ export class TabHeaderComponent implements OnInit {
 
   public onClose() {
     this.isClosing = true;
-    this.close.emit();
   }
 }
