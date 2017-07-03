@@ -13,6 +13,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 // Setup redux with ngrx
@@ -39,16 +40,19 @@ import { routes } from './app.routes';
  */
 @NgModule({
     imports: [
-        BrowserModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpModule,
-        BrowserAnimationsModule,
-        NgDraggableModule,
-        AngularDraggableModule,
-        ResizableModule,
-        RouterModule.forRoot(routes, { useHash: true }),
-        StoreModule.provideStore({ workSpaceStore }, { workSpaceStore: workSpaceInitialState }),
+      BrowserModule,
+      FormsModule,
+      ReactiveFormsModule,
+      HttpModule,
+      BrowserAnimationsModule,
+      NgDraggableModule,
+      AngularDraggableModule,
+      ResizableModule,
+      RouterModule.forRoot(routes, { useHash: true }),
+      StoreModule.provideStore({ workSpaceStore }, { workSpaceStore: workSpaceInitialState }),
+      StoreDevtoolsModule.instrumentOnlyWithExtension({
+        maxAge: 5
+      })
     ],
     providers: [...services],
     declarations: [...components],

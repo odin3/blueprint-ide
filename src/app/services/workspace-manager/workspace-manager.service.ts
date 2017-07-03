@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { AppState } from 'app/store/appState.store';
 import { includes } from 'lodash';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import { ITreeItem } from '../../foundation/';
 import { IWorkspace } from './workspace';
 import { IProject } from './project';
 import { WORKSPACE_ACTION_TYPES } from './actions';
@@ -37,14 +39,16 @@ export class WorkspaceManagerService {
         directories: []
       };
 
+      // let folderContents = fs.readdirSync(dir);
+
       // Fill current workspace files
-      for (let obj in fs.readdirSync(dir)) {
-        if (fs.statSync(obj).isDirectory()) {
-          workspace.directories.push(obj);
-        } else {
-          workspace.files.push(obj);
-        }
-      }
+      // for (let obj of folderContents) {
+      //   if (fs.statSync(obj).isDirectory()) {
+      //     workspace.directories.push(obj);
+      //   } else {
+      //     workspace.files.push(obj);
+      //   }
+      // }
 
       // Kick storage
       this.store.dispatch({
@@ -54,6 +58,11 @@ export class WorkspaceManagerService {
           workspace
         }
       });
+  }
+
+  getProjectFiles(): Observable<ITreeItem<string>[]> {
+    return this.store
+        .select('project.path');
   }
 
   /**
@@ -67,13 +76,14 @@ export class WorkspaceManagerService {
   public isProjectDirectoryValid(dir: string): boolean {
     let stat = fs.statSync(dir);
 
-    if (stat.isDirectory()) {
+    if (!stat.isDirectory()) {
       return false;
     }
 
     let subItems = fs.readdirSync(dir);
 
-    return includes(subItems, 'app.ts') || includes(subItems, 'app.module.ts');
+    return true;
+    // return includes(subItems, 'app.ts') || includes(subItems, 'app.module.ts');
 
   }
 

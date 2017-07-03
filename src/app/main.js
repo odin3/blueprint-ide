@@ -1,9 +1,13 @@
 const path = require('path');
+// const { default: installExtension, REDUX_DEVTOOLS } = require('electron-devtools-installer');
 
 /**
  * Include our app
  */
-const {app, BrowserWindow } = require('electron');
+const {app, BrowserWindow, protocol } = require('electron');
+
+const APP_PROTO = 'app';
+const RES_PROTO = 'res';
 
 // browser-window creates a native window
 let mainWindow = null;
@@ -21,7 +25,14 @@ app.on('window-all-closed', () => {
   }
 });
 
+const dir = (url) => path.normalize(`${__dirname}/${url}`)
+
 const createWindow = () => {
+
+  // installExtension(REDUX_DEVTOOLS)
+  //   .then((name) => console.log(`Added Extension:  ${name}`))
+  //   .catch((err) => console.log('An error occurred: ', err));
+
   // Initialize the window to our specified dimensions
   mainWindow = new BrowserWindow({
     width: 600,
@@ -32,7 +43,7 @@ const createWindow = () => {
   });
 
   // Tell Electron where to load the entry point from
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.loadURL(dir('index.html'));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();

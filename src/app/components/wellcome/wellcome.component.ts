@@ -36,7 +36,7 @@ export class WellcomeComponent implements OnInit {
       this.router.navigateByUrl('/editor');
     }
 
-    // this.router.navigateByUrl('/editor');
+    this.router.navigateByUrl('/editor');
   }
 
   createProject() {

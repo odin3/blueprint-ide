@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IFileTreeItem } from '../file-tree';
 
 @Component({
   selector: 'workspace',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class WorkspaceComponent implements OnInit {
+  fileTreeItems: IFileTreeItem[] = [];
 
   constructor() {
 

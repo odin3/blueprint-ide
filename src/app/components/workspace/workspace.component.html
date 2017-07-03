@@ -3,7 +3,7 @@
     <!-- #region Left Navbar -->
     <sidebar class="workspace__aside" position="left" [showFirstTab]="false">
       <sidebar-tab title="Project tree" icon="file-multiple">
-        <b>Tree</b>
+        <file-tree [items]="files" (itemClick)="onFileSelect($event)"></file-tree>
       </sidebar-tab>
       <sidebar-tab title="Data sources" icon="database">
         <b>Sources</b>
