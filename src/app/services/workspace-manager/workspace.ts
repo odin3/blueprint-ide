@@ -1,4 +1,3 @@
 export interface IWorkspace {
-  files: string[];
-  directories: string[];
+  openedFiles: string[];
 }

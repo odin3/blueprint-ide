@@ -1,4 +1,4 @@
 export interface IProject {
   name: string;
-  path: string;
+  location: string;
 }

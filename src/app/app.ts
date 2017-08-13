@@ -18,8 +18,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Setup redux with ngrx
 import { Store, StoreModule } from '@ngrx/store';
-// import { authStore, authInitialState } from './store/auth.store';
-import { workSpaceInitialState, workSpaceStore } from './store/workspace.store';
+import { AppStoreModule } from './store';
 
 /**
  * Import our child components
@@ -30,14 +29,6 @@ import { AppComponent } from './components/app.component';
 
 import { routes } from './app.routes';
 
-/**
- * Import the authentication service to be injected into our component
- */
-// import { Authentication } from './services/authentication';
-
-/*
- * provide('AppStore', { useValue: appStore }),
- */
 @NgModule({
     imports: [
       BrowserModule,
@@ -49,7 +40,7 @@ import { routes } from './app.routes';
       AngularDraggableModule,
       ResizableModule,
       RouterModule.forRoot(routes, { useHash: true }),
-      StoreModule.provideStore({ workSpaceStore }, { workSpaceStore: workSpaceInitialState }),
+      AppStoreModule,
       StoreDevtoolsModule.instrumentOnlyWithExtension({
         maxAge: 5
       })

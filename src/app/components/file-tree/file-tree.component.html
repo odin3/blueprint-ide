@@ -1,4 +1,4 @@
-<file-tree-item *ngFor="let item in items"
+<file-tree-item *ngFor="let item of items"
                 [item]="item"
                 (itemClick)="itemClick.emit(item)">
 </file-tree-item>

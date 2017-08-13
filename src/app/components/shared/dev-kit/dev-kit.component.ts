@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowserWindowService } from 'app/services/electron';
+
+const electron = require('electron');
+const remote = electron.remote;
 
 @Component({
   selector: 'app-dev-kit',
@@ -8,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class DevKitComponent implements OnInit {
 
-  constructor() {
+  constructor(private win: BrowserWindowService) {
 
   }
 
@@ -22,6 +26,10 @@ export class DevKitComponent implements OnInit {
   }
 
   reloadApp() {
-    window.location.reload();
+    window.location.href = 'index.html';
+  }
+
+  openDevTools() {
+    this.win.window['toggleDevTools']();
   }
 }

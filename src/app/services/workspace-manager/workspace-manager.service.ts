@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from 'app/store/appState.store';
 import { includes } from 'lodash';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -9,7 +8,7 @@ import * as path from 'path';
 import { ITreeItem } from '../../foundation/';
 import { IWorkspace } from './workspace';
 import { IProject } from './project';
-import { WORKSPACE_ACTION_TYPES } from './actions';
+import { STORE_ACTIONS, AppState } from 'app/store';
 
 /**
  * @description
@@ -28,41 +27,15 @@ export class WorkspaceManagerService {
    * @memberof WorkspaceManagerService
    */
   public setProject(dir: string) {
-     let project: IProject = {
-        name: path.basename(dir),
-        path: dir
-      };
-
-      // Define workspace
-      let workspace: IWorkspace = {
-        files: [],
-        directories: []
-      };
-
-      // let folderContents = fs.readdirSync(dir);
-
-      // Fill current workspace files
-      // for (let obj of folderContents) {
-      //   if (fs.statSync(obj).isDirectory()) {
-      //     workspace.directories.push(obj);
-      //   } else {
-      //     workspace.files.push(obj);
-      //   }
-      // }
-
-      // Kick storage
-      this.store.dispatch({
-        type: WORKSPACE_ACTION_TYPES.SET_DIRECTORY,
-        payload: {
-          project,
-          workspace
-        }
-      });
+    this.store.dispatch({
+      type: STORE_ACTIONS.OPEN_DIRECTORY,
+      payload: dir
+    });
   }
 
   getProjectFiles(): Observable<ITreeItem<string>[]> {
     return this.store
-        .select('project.path');
+        .select('project');
   }
 
   /**

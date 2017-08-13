@@ -4,7 +4,7 @@ import { isNil, isArray } from 'lodash';
 import { IFileTreeItem } from '../file-tree-item';
 
 @Component({
-  selector: 'app-file-tree-item',
+  selector: 'file-tree-item',
   templateUrl: './file-tree-item.component.html',
   styleUrls: ['./file-tree-item.component.scss']
 })

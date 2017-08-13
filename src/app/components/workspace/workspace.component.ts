@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { IFileTreeItem } from '../file-tree';
+import { WorkspaceManagerService } from '../../services/workspace-manager';
+import { ITreeItem } from '../../foundation';
+import { Store } from '@ngrx/store';
+import { AppState } from 'app/store/appState.store';
+import { Observable } from 'rxjs/Rx';
+import { IProject } from 'app/services/workspace-manager/project';
 
 @Component({
   selector: 'workspace',
@@ -8,10 +14,14 @@ import { IFileTreeItem } from '../file-tree';
 })
 
 export class WorkspaceComponent implements OnInit {
+  windowTitle: string = '';
+
   fileTreeItems: IFileTreeItem[] = [];
 
-  constructor() {
-
+  constructor(private workspace: WorkspaceManagerService, private store: Store<AppState>) {
+    this.store.select('project').subscribe((val: IProject) => {
+      this.windowTitle = val.name;
+    });
   }
 
   ngOnInit() {

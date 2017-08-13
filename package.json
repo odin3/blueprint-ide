@@ -37,6 +37,7 @@
     "@angular/platform-server": "^4.0.0",
     "@angular/router": "^4.0.0",
     "@ngrx/core": "^1.2.0",
+    "@ngrx/effects": "^2.0.3",
     "@ngrx/store": "^2.2.1",
     "@ngrx/store-devtools": "^3.2.4",
     "@types/electron": "^1.4.37",

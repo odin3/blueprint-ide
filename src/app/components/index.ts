@@ -5,7 +5,7 @@ import { sharedComponents } from './shared';
 import { workspaceComponents } from './workspace';
 import { tabsetComponents } from './tabset';
 import { tabComponents } from './tab';
-// import { tabsComponents } from './tabs';
+import { tabsComponents } from './tabs';
 // import { sidebarComponents, sidebarServices } from './sidebar-items';
 
 
@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 
 export const components = [
   ...tabComponents,
-  // ...tabsComponents,
+  ...tabsComponents,
   ...FILE_TREE_COMPONENTS,
   ...tabsetComponents,
   ...sharedComponents,

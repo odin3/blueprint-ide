@@ -1,6 +1,6 @@
-<div class="file-tree-item__control" [ngClass]="'file-tree-item--child': isChild">
+<div class="file-tree-item__control" [ngClass]="{'file-tree-item--child': isChild}">
   <span *ngIf="hasSubItems" class="file-tree-item__toggler">
-    <i class="mdi" [ngClass]="'mdi-chevron-right': isExpanded, 'mdi-chevron-right': !isExpanded"></i>
+    <i class="mdi" [ngClass]="{'mdi-chevron-right': isExpanded, 'mdi-chevron-right': !isExpanded}"></i>
   </span>
   <span *ngIf="hasIcon" class="file-tree-item__icon">
     <i [class]="iconClass"></i>
@@ -10,7 +10,7 @@
   </span>
 </div>
 <div class="file-tree-iten__children">
-  <file-tree-item *ngFor="let child in children"
+  <file-tree-item *ngFor="let child of children"
                   [icon]="child.icon"
                   [label]="child.label"
                   [isChild]="true"
