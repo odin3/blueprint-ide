@@ -23,10 +23,12 @@
 
 .sidebar__content {
   margin: auto;
-  width: 240px;
+  width: 100%;
   flex-grow: 1;
   background: #252525;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   &.sidebar__content--right,
   &.sidebar__content--bottom {
     order: -1;

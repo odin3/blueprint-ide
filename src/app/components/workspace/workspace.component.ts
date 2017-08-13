@@ -7,6 +7,8 @@ import { AppState } from 'app/store/appState.store';
 import { Observable } from 'rxjs/Rx';
 import { IProject } from 'app/services/workspace-manager/project';
 
+import { LoadStatus } from 'foundation';
+
 @Component({
   selector: 'workspace',
   templateUrl: './workspace.component.html',
@@ -15,6 +17,8 @@ import { IProject } from 'app/services/workspace-manager/project';
 
 export class WorkspaceComponent implements OnInit {
   windowTitle: string = '';
+
+  filesLoadStatus: number = LoadStatus.LOADING;
 
   fileTreeItems: IFileTreeItem[] = [];
 

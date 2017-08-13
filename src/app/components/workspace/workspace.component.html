@@ -3,7 +3,7 @@
     <!-- #region Left Navbar -->
     <sidebar class="workspace__aside" position="left" [showFirstTab]="false">
       <sidebar-tab title="Project tree" icon="file-multiple">
-        <file-tree [items]="files" (itemClick)="onFileSelect($event)"></file-tree>
+        <file-tree [items]="files" (itemClick)="onFileSelect($event)" [loadStatus]="filesLoadStatus"></file-tree>
       </sidebar-tab>
       <sidebar-tab title="Data sources" icon="database">
         <b>Sources</b>
@@ -11,7 +11,7 @@
       <sidebar-tab title="Favorites" icon="star">
         <b>Sources</b>
       </sidebar-tab>
-      <sidebar-tab title="Source Control" icon="git">
+      <sidebar-tab title="Source Control" icon="git">y
         Commits, changes, etc...
       </sidebar-tab>
       <sidebar-tab title="Tasks" icon="format-list-checks">

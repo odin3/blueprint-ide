@@ -1,5 +1,11 @@
 :host {
   display: block;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  margin: auto;
 }
 
 .sidebar__tab__header {
@@ -12,4 +18,14 @@
   strong {
     text-transform: uppercase;
   }
+}
+
+.sidebar__tab__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sidebar__tab__body {
+  flex: 1;
 }

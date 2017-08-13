@@ -6,6 +6,7 @@ import { workspaceComponents } from './workspace';
 import { tabsetComponents } from './tabset';
 import { tabComponents } from './tab';
 import { tabsComponents } from './tabs';
+import { PreloaderComponent } from './preloader/preloader.component';
 // import { sidebarComponents, sidebarServices } from './sidebar-items';
 
 
@@ -20,6 +21,7 @@ export const components = [
   ...blueprintComponents,
   ...wellcomeComponents,
   ...workspaceComponents,
+  PreloaderComponent,
   // ...sidebarComponents,
   AppComponent
 ];

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'sidebar-tab',
@@ -9,13 +9,24 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarTabComponent implements OnInit {
   @Input() icon: string;
   @Input() title: string;
-  @Input() visible: boolean = false;
 
-  constructor() {
+  @Input() set visible(isVisible) {
+    const e = this.elem.nativeElement.style;
+    e.display = isVisible ? 'flex' : 'none';
 
+    this.isVisible = isVisible;
+  }
+
+  get visible() {
+    return this.isVisible;
+  }
+
+  private isVisible: boolean = false;
+
+  constructor(private elem: ElementRef) {
   }
 
   ngOnInit() {
-
+    this.visible = false;
   }
 }

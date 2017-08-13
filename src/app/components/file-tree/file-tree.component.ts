@@ -2,6 +2,7 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { IFileTreeItem } from './file-tree-item';
 
 import { isArray } from 'lodash';
+import { Lifecycler } from 'foundation';
 
 @Component({
   selector: 'file-tree',
@@ -9,8 +10,13 @@ import { isArray } from 'lodash';
   styleUrls: ['./file-tree.component.scss']
 })
 
-export class FileTreeComponent implements OnInit {
+export class FileTreeComponent extends Lifecycler implements OnInit {
   @Input() items: IFileTreeItem[] = [];
+
+  @Input() set loadStatus(loadStatus) {
+    this.status = loadStatus;
+  }
+
   @Output() itemSelect: EventEmitter<IFileTreeItem> = new EventEmitter<IFileTreeItem>();
 
   get hasItems(): boolean {
@@ -18,7 +24,7 @@ export class FileTreeComponent implements OnInit {
   }
 
   constructor() {
-
+    super();
   }
 
   ngOnInit() {

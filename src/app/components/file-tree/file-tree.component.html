@@ -1,4 +1,9 @@
-<file-tree-item *ngFor="let item of items"
-                [item]="item"
-                (itemClick)="itemClick.emit(item)">
-</file-tree-item>
+<ng-container *ngIf="isLoaded || isIdle">
+  <file-tree-item
+    *ngFor="let item of items"
+    [item]="item"
+    (itemClick)="itemClick.emit(item)"
+  ></file-tree-item>
+</ng-container>
+
+<app-preloader *ngIf="isLoading" class="preloader"></app-preloader>
