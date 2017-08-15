@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { isNil, isArray } from 'lodash';
 
 import { IFileTreeItem } from '../file-tree-item';
+import { FileSystemService } from 'app/services/file-system.service';
+import { FileAssocService } from 'app/services/file-assoc.service';
 
 @Component({
   selector: 'file-tree-item',
@@ -17,6 +19,8 @@ export class FileTreeItemComponent implements OnInit {
   @Input() item: IFileTreeItem = null;
   @Output() itemClick: EventEmitter<void> = new EventEmitter<void>();
 
+  isExpanded: boolean = false;
+
   get hasIcon(): boolean {
     return !isNil(this.icon);
   }
@@ -29,7 +33,19 @@ export class FileTreeItemComponent implements OnInit {
     return this.hasIcon ? `mdi mdi-${this.icon}` : null;
   }
 
-  constructor() {
+
+  constructor(private fs: FileSystemService, private assoc: FileAssocService) {
+
+  }
+
+  expand() {
+    this.isExpanded = !this.isExpanded;
+
+    if (isNil(this.children)) {
+      this.getChildrenItems().then((items) => {
+        this.children = items;
+      });
+    }
 
   }
 
@@ -39,5 +55,10 @@ export class FileTreeItemComponent implements OnInit {
       this.label = this.item.label;
       this.children = this.item.children;
     }
+  }
+
+  private async getChildrenItems() {
+    const items = await this.fs.getDirectoryItems(this.item.uid);
+    return items.map((i) => this.assoc.convertFileItemFromTreeItem(i));
   }
 }

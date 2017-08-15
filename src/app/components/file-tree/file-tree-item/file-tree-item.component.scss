@@ -6,10 +6,9 @@
 
 :host {
   display: block;
-}
-
-.file-tree-item--child {
-  padding-left: 4px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .file-tree-item__label {
@@ -32,21 +31,30 @@
   }
 }
 
+
+.file-tree-item__control {
+  padding: 3px 10px;
+  &:hover {
+    background-color: #3b3b3b;
+  }
+
+  &.file-tree-item__control--child {
+    padding-left: 23px;
+  }
+}
+
+@include color(language-html5, #f16428);
+@include color(language-typescript, #007acc);
 @include color(language-javascript, yellow);
 @include color(nodejs, green);
 @include color(home-assistant, dodgerBlue);
 @include color(git, tomato);
 @include color(json, yellow);
+@include color(layers, #8A2BE2);
+@include color(palette, orange);
+@include color(test-tube, #7FFF00);
+@include color(cube-outline, #00BFFF);
+@include color(angular, red);
+@include color(file-image, #8A2BE2);
 
 
-
-
-
-:host {
-  padding: 3px 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #3b3b3b;
-  }
-}

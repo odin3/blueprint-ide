@@ -76,6 +76,11 @@ export enum FILE_TYPES {
   GEN_TYPESCRIPT,
 
   /**
+   * HTML file
+   */
+  GEN_HTML,
+
+  /**
    * Markdown file (.md)
    */
   GEN_MARKDOWN,
@@ -84,6 +89,11 @@ export enum FILE_TYPES {
    * Git Ignore file
    */
   GEN_GITIGNORE,
+
+  /**
+   * Image files
+   */
+  GEN_IMAGE,
 
   /**
    * Generic file
@@ -106,8 +116,10 @@ export const FILE_TYPE_ICONS = [
   'json',
   'language-javascript',
   'language-typescript',
+  'language-html5',
   'markdown',
   'git',
+  'file-image',
   'file'
 ];
 
@@ -126,8 +138,10 @@ export const FILE_TYPE_ASSOC = [
   /\.json/,
   /\.js/,
   /\.ts/,
+  /\.html/,
   /\.md/,
   /\.gitignore/,
+  /(^|\.)(jpg|jpeg|png|webp|gif|bmp|ico)+$/,
   null
 ];
 

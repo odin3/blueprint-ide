@@ -1,6 +1,6 @@
-<div class="file-tree-item__control" [ngClass]="{'file-tree-item--child': isChild}">
-  <span *ngIf="hasChildren" class="file-tree-item__toggler">
-    <i class="mdi" [ngClass]="{'mdi-chevron-right': isExpanded, 'mdi-chevron-right': !isExpanded}"></i>
+<div class="file-tree-item__control" [ngClass]="{'file-tree-item__control--child': isChild}">
+  <span *ngIf="hasChildren" class="file-tree-item__toggler" (click)="expand()">
+    <i class="mdi" [ngClass]="{'mdi-chevron-down': isExpanded, 'mdi-chevron-right': !isExpanded}"></i>
   </span>
   <span *ngIf="hasIcon" class="file-tree-item__icon">
     <i [class]="iconClass"></i>
@@ -9,8 +9,9 @@
     {{label}}
   </span>
 </div>
-<div class="file-tree-iten__children">
+<div class="file-tree-iten__children" *ngIf="hasChildren && isExpanded">
   <file-tree-item *ngFor="let child of children"
+                  [item]="child"
                   [icon]="child.icon"
                   [label]="child.label"
                   [isChild]="true"
