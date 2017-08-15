@@ -74,7 +74,16 @@ export class FileSystemService {
       });
     }
 
-    return items;
+    return items.sort((a, b) => {
+      if ((a.children === false) && (b.children !== false)) {
+        return 1;
+      } else if ((a.children !== false) && (b.children === false)) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+
   }
 
 
