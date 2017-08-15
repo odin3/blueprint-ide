@@ -18,11 +18,11 @@ export class FileTreeItemComponent implements OnInit {
   @Output() itemClick: EventEmitter<void> = new EventEmitter<void>();
 
   get hasIcon(): boolean {
-    return isNil(this.icon);
+    return !isNil(this.icon);
   }
 
   get hasChildren(): boolean {
-    return isArray(this.children);
+    return isArray(this.children) || this.item.isDirectory;
   }
 
   get iconClass(): string {

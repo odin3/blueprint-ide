@@ -1,7 +1,52 @@
+@mixin color($icon-name, $color) {
+  .mdi.mdi-#{$icon-name} {
+    color: $color;
+  }
+}
+
 :host {
   display: block;
 }
 
 .file-tree-item--child {
   padding-left: 4px;
+}
+
+.file-tree-item__label {
+  font-size: 9.75pt;
+}
+
+.file-tree-item__icon {
+  font-size: 10pt;
+}
+
+.mdi {
+  color: #767676;
+}
+
+.file-tree-item__toggler {
+  font-size: 10pt;
+
+  .mdi {
+    color: #fff;
+  }
+}
+
+@include color(language-javascript, yellow);
+@include color(nodejs, green);
+@include color(home-assistant, dodgerBlue);
+@include color(git, tomato);
+@include color(json, yellow);
+
+
+
+
+
+:host {
+  padding: 3px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #3b3b3b;
+  }
 }

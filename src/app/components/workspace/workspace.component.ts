@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Rx';
 import { IProject } from 'app/services/workspace-manager/project';
 
 import { LoadStatus } from 'foundation';
+import { FileAssocService } from 'app/services/file-assoc.service';
 
 @Component({
   selector: 'workspace',
@@ -22,13 +23,27 @@ export class WorkspaceComponent implements OnInit {
 
   fileTreeItems: IFileTreeItem[] = [];
 
-  constructor(private workspace: WorkspaceManagerService, private store: Store<AppState>) {
+  constructor(
+    private workspace: WorkspaceManagerService,
+    private store: Store<AppState>,
+    private assoc: FileAssocService
+  ) {
     this.store.select('project').subscribe((val: IProject) => {
       this.windowTitle = val.name;
     });
   }
 
   ngOnInit() {
+    this.loadProjectFiles();
+  }
 
+
+
+  loadProjectFiles() {
+    this.filesLoadStatus = LoadStatus.LOADING;
+    this.workspace.getProjectFiles().then((files) => {
+      this.fileTreeItems = files.map((item) => this.assoc.convertFileItemFromTreeItem(item));
+      this.filesLoadStatus = LoadStatus.LOADED;
+    });
   }
 }

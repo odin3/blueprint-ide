@@ -25,6 +25,8 @@ export class FileTreeComponent extends Lifecycler implements OnInit {
 
   constructor() {
     super();
+
+    window['sidebar'] = this;
   }
 
   ngOnInit() {

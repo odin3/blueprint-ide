@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { includes } from 'lodash';
-import * as fs from 'fs';
-import * as path from 'path';
+import { Observable } from 'rxjs/Rx';
+import { includes, isNil } from 'lodash';
 
 import { ITreeItem } from '../../foundation/';
 import { IWorkspace } from './workspace';
 import { IProject } from './project';
 import { STORE_ACTIONS, AppState } from 'app/store';
+import { FileSystemService } from '../file-system.service';
+
+import * as fs from 'fs';
 
 /**
  * @description
@@ -17,7 +18,7 @@ import { STORE_ACTIONS, AppState } from 'app/store';
 @Injectable()
 export class WorkspaceManagerService {
 
-  public constructor(private store: Store<AppState>) {}
+  public constructor(private store: Store<AppState>, private fs: FileSystemService) {}
 
   /**
    * Load project from path to the workspace
@@ -33,9 +34,18 @@ export class WorkspaceManagerService {
     });
   }
 
-  getProjectFiles(): Observable<ITreeItem<string>[]> {
-    return this.store
-        .select('project');
+  getProjectDirectory(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.store.select('project').subscribe(
+        (val: IProject) => resolve(val.location),
+        (err) => reject(err)
+      );
+    });
+  }
+
+  async getProjectFiles(): Promise<ITreeItem<string>[]> {
+    const projectDir: string = <string> await this.getProjectDirectory();
+    return await this.fs.getDirectoryItems(projectDir);
   }
 
   /**

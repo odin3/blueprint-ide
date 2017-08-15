@@ -7,10 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class PreloaderComponent implements OnInit {
-  @Input() height: number = 75;
-
-  @Input() width: number = 75;
-
   constructor() {
 
   }

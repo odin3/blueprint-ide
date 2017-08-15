@@ -25,7 +25,7 @@ app.on('window-all-closed', () => {
   }
 });
 
-const dir = (url) => path.normalize(`${__dirname}/${url}`)
+const dir = (url) => path.normalize(`${__dirname}/${url}`);
 
 const createWindow = () => {
 
@@ -41,6 +41,8 @@ const createWindow = () => {
     icon: getApplicationIcon(),
     resizable: false
   });
+
+  BrowserWindow.addDevToolsExtension(path.normalize(`${__dirname}/../../private/augury/1.14.0_1`));
 
   // Tell Electron where to load the entry point from
   mainWindow.loadURL(dir('index.html'));

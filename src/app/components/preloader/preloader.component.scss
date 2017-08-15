@@ -24,7 +24,7 @@
   $linecap:    square;       // could be 'round', but the official one is square
   $loops:      5;            // number of points where the arc meets
   $arc:        0.72;         // fraction of the circumference that the arc grows to
-  $perimeter:  67px * pi();  // circumference of the raw svg inner cricle
+  $perimeter:  30px * pi();  // circumference of the raw svg inner cricle
 
   // measure to prevent inline block spacing from affecting the outer rotation
   font-size: 0;

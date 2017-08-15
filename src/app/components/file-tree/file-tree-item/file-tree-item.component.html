@@ -1,5 +1,5 @@
 <div class="file-tree-item__control" [ngClass]="{'file-tree-item--child': isChild}">
-  <span *ngIf="hasSubItems" class="file-tree-item__toggler">
+  <span *ngIf="hasChildren" class="file-tree-item__toggler">
     <i class="mdi" [ngClass]="{'mdi-chevron-right': isExpanded, 'mdi-chevron-right': !isExpanded}"></i>
   </span>
   <span *ngIf="hasIcon" class="file-tree-item__icon">
