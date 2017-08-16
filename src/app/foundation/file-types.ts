@@ -105,7 +105,7 @@ export const FILE_TYPE_ICONS = [
   'angular',
   'compass',
   'hexagon',
-  'pipe',
+  'filter',
   'cube-outline',
   'layers',
   'palette',

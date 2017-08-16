@@ -9,6 +9,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .file-tree-item__label {
@@ -39,8 +40,12 @@
   }
 
   &.file-tree-item__control--child {
-    padding-left: 23px;
+
   }
+}
+
+.file-tree-iten__children {
+  margin-left: 23px;
 }
 
 @include color(language-html5, #f16428);
@@ -56,5 +61,7 @@
 @include color(cube-outline, #00BFFF);
 @include color(angular, red);
 @include color(file-image, #8A2BE2);
+@include color(filter, #c51162);
+@include color(hexagon, #00b8d4);
 
 
