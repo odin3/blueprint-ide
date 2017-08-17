@@ -1,0 +1,15 @@
+<div *ngIf="hasText" class="progress__text">
+  {{text}}
+</div>
+
+<div class="progress">
+  <div
+    class="progress__bar"
+    role="progressbar"
+    [ngClass]="{'progress__bar--indeterminate': indeterminate}"
+    [style.width]="barWidth"
+    [attr.aria-valuenow]="progress"
+    aria-valuemin="0"
+    aria-valuemin="100"
+  ></div>
+</div>

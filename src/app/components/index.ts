@@ -7,6 +7,7 @@ import { tabsetComponents } from './tabset';
 import { tabComponents } from './tab';
 import { tabsComponents } from './tabs';
 import { PreloaderComponent } from './preloader/preloader.component';
+import { EDITORS } from './editors';
 // import { sidebarComponents, sidebarServices } from './sidebar-items';
 
 
@@ -22,6 +23,7 @@ export const components = [
   ...wellcomeComponents,
   ...workspaceComponents,
   PreloaderComponent,
+  ...EDITORS,
   // ...sidebarComponents,
   AppComponent
 ];
@@ -31,5 +33,6 @@ export const providers = [
 ];
 
 export const entryComponents = [
-  ...tabsComponents
+  ...tabsComponents,
+  ...EDITORS
 ];

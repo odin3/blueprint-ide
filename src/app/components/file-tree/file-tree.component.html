@@ -6,4 +6,10 @@
   ></file-tree-item>
 </ng-container>
 
-<app-preloader *ngIf="isLoading" class="preloader"></app-preloader>
+<!-- <app-preloader *ngIf="isLoading" class="preloader"></app-preloader> -->
+<progress-bar
+  class="preloader"
+  *ngIf="isLoading"
+  text="Loading files list..."
+  [indeterminate]="true"
+></progress-bar>

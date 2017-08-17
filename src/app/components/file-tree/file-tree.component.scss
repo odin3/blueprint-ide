@@ -9,5 +9,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 40%;
+  max-width: 128px;
+  min-width: 95px;
   transform: translate(-50%, -50%);
 }
