@@ -1,6 +1,13 @@
 <div class="panel__header">
+  <i
+    class="mdi panel__handle"
+    [ngClass]="{'mdi-chevron-down': expanded, 'mdi-chevron-right': !expanded}"
+    (click)="expanded = !expanded"
+  ></i>
   <span class="panel__header__title">
     {{label}}
   </span>
 </div>
-<ng-content></ng-content>
+<div class="panel__content" [hidden]="!expanded">
+  <ng-content></ng-content>
+</div>

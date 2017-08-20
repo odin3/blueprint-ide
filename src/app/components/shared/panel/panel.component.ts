@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class PanelComponent implements OnInit {
   @Input() label: string;
+  @Input() expanded: boolean = true;
 
   constructor() {
 

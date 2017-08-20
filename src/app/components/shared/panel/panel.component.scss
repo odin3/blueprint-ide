@@ -14,6 +14,10 @@
   text-transform: uppercase;
 }
 
+.panel__handle {
+  cursor: pointer;
+}
+
 .panel__header {
   display: flex;
   cursor: default;
@@ -21,19 +25,12 @@
   align-items: center;
   margin-bottom: 10px;
 
-  &:before, &:after {
-    content: '';
-    background: currentColor;
-    height: 1px;
-    display: inline-block;
-  }
-
-  &:before {
-    width: 10px;
-  }
-
   &:after {
     flex: 1;
     width: 100%;
+    content: '';
+    background: #666;
+    height: 1px;
+    display: inline-block;
   }
 }
