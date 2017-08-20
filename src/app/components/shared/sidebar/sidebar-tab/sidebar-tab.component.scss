@@ -29,5 +29,7 @@
 .sidebar__tab__body {
   flex: 1;
   overflow: auto;
+  position: relative;
+  animation: items-slide-left 0.25s ease-out;
 }
 

@@ -14,29 +14,30 @@
     Edit NPM package data in package.json
   </page-header>
   <div class="panel pkg-editor__panel">
-    <panel label="Main Information">
-      <panel-row label="Package name">
-        <input type="text" [ngModel]="package.name">
-      </panel-row>
-      <panel-row label="Version">
-        <input type="text" [ngModel]="package.version">
-      </panel-row>
-      <panel-row label="Description">
-        <input type="text" [ngModel]="package.description">
-      </panel-row>
-      <panel-row label="Repository URL">
-        <input type="text" [ngModel]="package.repository">
-      </panel-row>
-    </panel>
+    <div class="pkg-editor__container animated--slide-up">
+      <panel label="Main Information">
+          <panel-row label="Package name">
+            <input type="text" [ngModel]="package.name">
+          </panel-row>
+          <panel-row label="Version">
+            <input type="text" [ngModel]="package.version">
+          </panel-row>
+          <panel-row label="Description">
+            <input type="text" [ngModel]="package.description">
+          </panel-row>
+          <panel-row label="Repository URL">
+            <input type="text" [ngModel]="package.repository">
+          </panel-row>
+        </panel>
 
-    <panel label="Dependencies">
-      <grind
-        [columns]="cols"
-        [items]="package.dependencies | toArray"
-        (itemsDelete)="onItemDelete($event)"
-      ></grind>
-    </panel>
-
+        <panel label="Dependencies">
+          <grind
+            [columns]="cols"
+            [items]="package.dependencies | toArray"
+            (itemsDelete)="onItemDelete($event)"
+          ></grind>
+        </panel>
+    </div>
   </div>
   <!-- <textarea class="pkg-editor__source" readonly>{{package | json}}</textarea> -->
 </div>

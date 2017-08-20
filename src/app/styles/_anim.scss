@@ -1,0 +1,63 @@
+@keyframes items-slide-up {
+  from {
+    top: 20px;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes items-slide-down {
+  from {
+    bottom: 20px;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes items-slide-left {
+  from {
+    left: 20px;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+
+.animated--slide-down {
+  position: relative;
+  animation: items-slide-down 0.25s ease-out;
+}
+
+.animated--slide-up {
+  position: relative;
+  animation: items-slide-up 0.25s ease-out;
+}
+
+.animated--slide-left {
+  position: relative;
+  animation: items-slide-left 0.25s ease-out;
+}
