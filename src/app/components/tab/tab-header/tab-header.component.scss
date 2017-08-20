@@ -9,6 +9,16 @@
   }
 }
 
+@keyframes tab-slide-up {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
 .tab__control {
   position: relative;
   border-right: 1px solid #1E1E1E;
@@ -19,6 +29,8 @@
   font-size: 9pt;
   transition: top 0.1s ease-out 0s;
   top: 0%;
+
+  animation: tab-slide-up 0.2s ease-out;
 
   &.tab__control--active {
     .tab__close {
