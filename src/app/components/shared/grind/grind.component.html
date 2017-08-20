@@ -1,0 +1,27 @@
+<table
+  class="grind"
+  tabindex="-1"
+  (keydown)="onKeyDown($event)"
+>
+  <thead>
+    <tr>
+      <th *ngFor="let col of columnNames" class="grind__col">
+        {{col}}
+      </th>
+      <th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let item of collection"
+      class="grind__row"
+      tabindex="-1"
+      [ngClass]="{'grind__row--selected': isSelected(item)}"
+      (click)="toggleSelected(item)"
+    >
+      <td *ngFor="let prop of columnProps" class="grind__col">
+        {{getValueByKey(item, prop)}}
+      </td>
+    </tr>
+  </tbody>
+</table>

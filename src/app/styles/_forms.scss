@@ -1,0 +1,29 @@
+textarea {
+  display: block;
+  font-family: monospace;
+  font-size: 10pt;
+  color: #ADADAD;
+  background: #333333;
+  box-sizing: border-box;
+  border: 1px solid #666;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font-family: monospace;
+  font-size: 10pt;
+  color: #ADADAD;
+  background: #333333;
+  border: 1px solid #666;
+  padding: 5px;
+  font: 9.75pt 'Lato', sans-serif;
+  box-sizing: border-box;
+
+  &:active, &:focus {
+    background: #ADADAD;
+    color: #333333;
+    outline: 0;
+  }
+}
+

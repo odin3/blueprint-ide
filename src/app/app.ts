@@ -28,6 +28,7 @@ import { services } from './services';
 import { AppComponent } from './components/app.component';
 
 import { routes } from './app.routes';
+import { pipes } from './pipes';
 
 @NgModule({
     imports: [
@@ -46,7 +47,7 @@ import { routes } from './app.routes';
       })
     ],
     providers: [...services],
-    declarations: [...components],
+    declarations: [...components, ...pipes],
     bootstrap: [AppComponent],
     entryComponents: [...entryComponents]
 })

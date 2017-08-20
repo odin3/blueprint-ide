@@ -13,7 +13,7 @@
                  [ngClass]="{'hidden': currentTab !== i}"
                  [tabType]="tab.tabType"
                  [classType]="tab.classType"
-                 [file]="tab.file"></dynamic-tab>
+                 [path]="tab.path"></dynamic-tab>
   </ng-template>
   <tabset-wellcome *ngIf="tabs.length === 0" (open)="makeTab();"></tabset-wellcome>
 </div>

@@ -10,9 +10,9 @@ import { ITabContext } from '../../tab';
 
 export class BlueprintTabComponent implements OnInit, ITabContext {
   @Input()
-  public file: string = '';
+  public path: string = '';
 
-  public label: string = 'title';
+  public label: string = 'Blueprint';
 
   public icon: string = 'target';
 

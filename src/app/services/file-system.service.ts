@@ -83,7 +83,23 @@ export class FileSystemService {
         return 0;
       }
     });
+  }
 
+  readTextFile(path: string, encoding: string = 'utf8'): Promise<string> {
+    return new Promise((resolve, reject) => {
+      fs.readFile(path, (err, data) => {
+        if (isNil(err)) {
+          resolve(String(data));
+        } else {
+          reject(err);
+        }
+      });
+    });
+  }
+
+  async readJsonFile(path: string): Promise<any> {
+    const data = await this.readTextFile(path);
+    return JSON.parse(data);
   }
 
 

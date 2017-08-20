@@ -1,0 +1,52 @@
+.grind {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grind__col {
+  text-align: left;
+  padding: 4px 8px;
+  .grind__col--numeric {
+    text-align: right
+  }
+}
+
+td.grind__col {
+  font-size: 9.75pt;
+}
+
+th.grind__col {
+  // background: #1E1E1E;
+  // color: white;
+  background: #3b3b3b;
+  color: #ADADAD;
+  font-size: 9pt;
+}
+
+.grind__row {
+  background: #191919;
+  color: #fff;
+  // border-bottom: 1px solid #323232;
+  &:hover {
+    // background: #323232;
+  }
+
+  &:nth-child(2n+2) {
+    background: #212121;
+  }
+
+  &:focus {
+    background: #484848;
+    outline: none;
+  }
+
+  &.grind__row--selected {
+    color: white;
+    background: #0C70DD;
+
+    &:hover, &:focus, &:active {
+      background: #0C70DD;
+      border-bottom-color: #0C70DD;
+    }
+  }
+}

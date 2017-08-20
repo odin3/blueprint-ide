@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IFileTreeItem } from '../file-tree';
 import { WorkspaceManagerService } from '../../services/workspace-manager';
 import { ITreeItem } from '../../foundation';
@@ -9,6 +9,7 @@ import { IProject } from 'app/services/workspace-manager/project';
 
 import { LoadStatus } from 'foundation';
 import { FileAssocService } from 'app/services/file-assoc.service';
+import { TabsetComponent } from 'app/components/tabset';
 
 @Component({
   selector: 'workspace',
@@ -17,6 +18,7 @@ import { FileAssocService } from 'app/services/file-assoc.service';
 })
 
 export class WorkspaceComponent implements OnInit {
+  @ViewChild('tabset') tabset: TabsetComponent;
   windowTitle: string = '';
 
   filesLoadStatus: number = LoadStatus.LOADING;
@@ -37,6 +39,10 @@ export class WorkspaceComponent implements OnInit {
     this.loadProjectFiles();
   }
 
+  onFileSelect(item: IFileTreeItem) {
+    const editor = this.assoc.getFileEditorClass(item.uid);
+    this.tabset.createTab(item.label, item.uid, editor, null);
+  }
 
 
   loadProjectFiles() {

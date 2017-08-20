@@ -12,7 +12,8 @@
     "paths": {},
     "lib": [
       "dom",
-      "es6"
+      "es6",
+      "es7"
     ],
     "typeRoots": [
       "node_modules/@types"

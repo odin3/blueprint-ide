@@ -3,7 +3,11 @@
     <!-- #region Left Navbar -->
     <sidebar class="workspace__aside" position="left" [showFirstTab]="false">
       <sidebar-tab title="Project tree" icon="file-multiple">
-        <file-tree [items]="fileTreeItems" (itemClick)="onFileSelect($event)" [loadStatus]="filesLoadStatus"></file-tree>
+        <file-tree
+          [items]="fileTreeItems"
+          (itemSelect)="onFileSelect($event)"
+          [loadStatus]="filesLoadStatus"
+        ></file-tree>
       </sidebar-tab>
       <sidebar-tab title="Data sources" icon="database">
         <b>Sources</b>
@@ -29,7 +33,7 @@
         <control-box title="OrderCallComponent"></control-box>
         <control-box title="OnCall" target="clientNumber (string)" type="Function"></control-box>
       </blueprint>-->
-      <tabset></tabset>
+      <tabset #tabset></tabset>
       <!-- #endregion -->
 
       <!-- #region Bottom Navbar -->

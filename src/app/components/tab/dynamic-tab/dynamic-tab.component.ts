@@ -35,7 +35,7 @@ export class DynamicTabComponent implements AfterViewInit, OnDestroy, OnChanges 
   public tabType: number = TabTypes.TAB_COMMON;
 
   @Input()
-  public file: string = null;
+  public path: string = null;
 
   private get tabIcon(): string {
     return getTabIcon(this.tabType);
@@ -60,7 +60,7 @@ export class DynamicTabComponent implements AfterViewInit, OnDestroy, OnChanges 
     // to access the created instance use
     this.cmpRef.instance.icon = this.tabIcon;
     this.cmpRef.instance.label = this.label;
-    this.cmpRef.instance.file = this.file;
+    this.cmpRef.instance.path = this.path;
     // this.compRef.instance.someOutput.subscribe(val => doSomething());
     this.cdRef.detectChanges();
   }

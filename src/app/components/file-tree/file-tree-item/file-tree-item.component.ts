@@ -17,7 +17,7 @@ export class FileTreeItemComponent implements OnInit {
   @Input() label: string = 'Item Title';
   @Input() children: IFileTreeItem[] = [];
   @Input() item: IFileTreeItem = null;
-  @Output() itemClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() itemClick: EventEmitter<IFileTreeItem> = new EventEmitter<IFileTreeItem>();
 
   isExpanded: boolean = false;
 
@@ -31,6 +31,12 @@ export class FileTreeItemComponent implements OnInit {
 
   get iconClass(): string {
     return this.hasIcon ? `mdi mdi-${this.icon}` : null;
+  }
+
+  triggerItemSelect(item: IFileTreeItem) {
+    if (!item.isDirectory) {
+      this.itemClick.emit(item);
+    }
   }
 
 

@@ -1,3 +1,5 @@
+import { PackageEditorComponent } from '../components/editors';
+
 /**
  * File types
  *
@@ -101,6 +103,12 @@ export enum FILE_TYPES {
   GEN_UNKNOWN,
 }
 
+const EDITORS = [];
+EDITORS[FILE_TYPES.GEN_PACKAGE_JSON] = PackageEditorComponent;
+
+export const FILE_EDITORS = EDITORS;
+
+
 export const FILE_TYPE_ICONS = [
   'angular',
   'compass',
@@ -112,7 +120,7 @@ export const FILE_TYPE_ICONS = [
   'test-tube',
   'palette',
   'database',
-  'nodejs',
+  'npm',
   'json',
   'language-javascript',
   'language-typescript',

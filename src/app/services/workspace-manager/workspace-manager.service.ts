@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Rx';
+import { Observable, Subject } from 'rxjs/Rx';
 import { includes, isNil } from 'lodash';
 
 import { ITreeItem } from '../../foundation/';
@@ -10,6 +10,7 @@ import { STORE_ACTIONS, AppState } from 'app/store';
 import { FileSystemService } from '../file-system.service';
 
 import * as fs from 'fs';
+import { IFileTreeItem } from 'app/components/file-tree';
 
 /**
  * @description
@@ -18,6 +19,7 @@ import * as fs from 'fs';
 @Injectable()
 export class WorkspaceManagerService {
 
+  public onFileOpen: Subject<IFileTreeItem> = new Subject();
   public constructor(private store: Store<AppState>, private fs: FileSystemService) {}
 
   /**
@@ -41,6 +43,10 @@ export class WorkspaceManagerService {
         (err) => reject(err)
       );
     });
+  }
+
+  openFileItemInEditor(fileItem: IFileTreeItem) {
+    this.onFileOpen.next(fileItem);
   }
 
   async getProjectFiles(): Promise<ITreeItem<string>[]> {

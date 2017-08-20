@@ -1,7 +1,7 @@
 export interface ITabContext {
   classType?: any;
+  path: string;
   label: string;
-  file: string;
   args?: any;
   tabType?: number;
   icon?: string;

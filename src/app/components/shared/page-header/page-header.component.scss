@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.page-header__icon {
+  font-size: 96px;
+  padding: 10px 20px;
+  line-height: 96px;
+}
+
+.page-header__info {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.page-header__title {
+  font-size: 22pt;
+  display: block;
+  margin: 15px 0;
+  font-weight: bold;
+}
+.page-header__desc {
+  font-size: 10pt;
+}

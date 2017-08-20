@@ -1,0 +1,21 @@
+
+:host {
+  display: flex;
+  float: left;
+  flex-direction: row;
+  height: 32px;
+  align-items: center;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.panel__row__input {
+  flex: 1;
+  padding: 5px;
+}
+
+.panel__row__label {
+  width: 96px;
+  text-align: right;
+  padding-right: 10px;
+}

@@ -31,16 +31,16 @@ export class TabsetComponent implements OnInit, AfterContentInit {
   }
 
   public makeTab() {
-    this.createTab('AppComponent', 'file.txt', BlueprintTabComponent, TabTypes.TAB_BLUEPRINT);
-    this.createTab('RootComponent', 'file.txt', BlueprintTabComponent, TabTypes.TAB_CODE);
+    // this.createTab('AppComponent', 'file.txt', BlueprintTabComponent, TabTypes.TAB_BLUEPRINT);
+    // this.createTab('RootComponent', 'file.txt', BlueprintTabComponent, TabTypes.TAB_CODE);
   }
 
   public getIcon(type: number): string {
     return getTabIcon(type);
   }
 
-  public createTab(label: string, file: string, classType: any, tabType: number = TabTypes.TAB_COMMON) {
-    this.tabs.push({label, file, classType, tabType});
+  public createTab(label: string, path: string, classType: ITabContext, tabType: number = TabTypes.TAB_COMMON) {
+    this.tabs.push({label, path, classType, tabType});
   }
 
   public closeTab(tabIndex: number) {

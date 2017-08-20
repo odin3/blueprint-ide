@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { FILE_TYPES, FILE_TYPE_ICONS, FILE_TYPE_ASSOC, ITreeItem } from 'app/foundation';
+import { FILE_TYPES, FILE_TYPE_ICONS, FILE_TYPE_ASSOC, ITreeItem, FILE_EDITORS } from 'app/foundation';
 import { IFileTreeItem } from 'app/components/file-tree';
+import { ITabContext } from '../components/tab';
 
 import { isNil } from 'lodash';
 
@@ -99,5 +100,12 @@ export class FileAssocService {
       icon: isDirectory ? null : this.getFileIconByName(item.label),
       isDirectory
     };
+  }
+
+
+  getFileEditorClass(fileName: string): ITabContext {
+    const fileType = this.getFileTypeByName(fileName);
+
+    return FILE_EDITORS[fileType] || FILE_EDITORS[FILE_TYPES.GEN_UNKNOWN];
   }
 }

@@ -5,7 +5,7 @@
   <span *ngIf="hasIcon" class="file-tree-item__icon">
     <i [class]="iconClass"></i>
   </span>
-  <span class="file-tree-item__label" (click)="itemClick.emit()">
+  <span class="file-tree-item__label" (click)="triggerItemSelect(item)">
     {{label}}
   </span>
 </div>
@@ -16,6 +16,6 @@
                   [label]="child.label"
                   [isChild]="true"
                   [children]="child.children"
-                  (itemClick)="itemClick.emit(child)">
+                  (itemClick)="triggerItemSelect(child)">
   </file-tree-item>
 </div>
