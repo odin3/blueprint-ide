@@ -1,21 +1,24 @@
-<div class="file-tree-item__control" [ngClass]="{'file-tree-item__control--child': isChild}">
-  <span *ngIf="hasChildren" class="file-tree-item__toggler" (click)="expand()">
-    <i class="mdi" [ngClass]="{'mdi-chevron-down': isExpanded, 'mdi-chevron-right': !isExpanded}"></i>
-  </span>
-  <span *ngIf="hasIcon" class="file-tree-item__icon">
-    <i [class]="iconClass"></i>
-  </span>
-  <span class="file-tree-item__label" (click)="triggerItemSelect(item)">
-    {{label}}
-  </span>
+<div class="file-tree-item" [ngClass]="{'file-tree-item--child': isChild}">
+  <div class="file-tree-item__control" [ngClass]="{'file-tree-item__control--child': isChild}">
+      <span *ngIf="hasChildren" class="file-tree-item__toggler" (click)="expand()">
+        <i class="mdi" [ngClass]="{'mdi-chevron-down': isExpanded, 'mdi-chevron-right': !isExpanded}"></i>
+      </span>
+      <span *ngIf="hasIcon" class="file-tree-item__icon">
+        <i [class]="iconClass"></i>
+      </span>
+      <span class="file-tree-item__label" (click)="triggerItemSelect(item)">
+        {{label}}
+      </span>
+    </div>
+    <div class="file-tree-iten__children" *ngIf="hasChildren && isExpanded">
+      <file-tree-item *ngFor="let child of children"
+                      [item]="child"
+                      [icon]="child.icon"
+                      [label]="child.label"
+                      [isChild]="true"
+                      [children]="child.children"
+                      (itemClick)="triggerItemSelect(child)">
+      </file-tree-item>
+    </div>
 </div>
-<div class="file-tree-iten__children" *ngIf="hasChildren && isExpanded">
-  <file-tree-item *ngFor="let child of children"
-                  [item]="child"
-                  [icon]="child.icon"
-                  [label]="child.label"
-                  [isChild]="true"
-                  [children]="child.children"
-                  (itemClick)="triggerItemSelect(child)">
-  </file-tree-item>
-</div>
+

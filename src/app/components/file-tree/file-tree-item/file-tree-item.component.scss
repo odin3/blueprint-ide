@@ -4,12 +4,46 @@
   }
 }
 
+@keyframes items-slide-up {
+  from {
+    top: 20px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes items-slide-down {
+  from {
+    bottom: 20px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
 :host {
+  display: block;
+}
+
+.file-tree-item {
   display: block;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  animation: items-slide-up 0.3s ease-out;
+
+  &.file-tree-item--child {
+    animation: items-slide-down 0.3s ease-out;
+  }
 }
 
 .file-tree-item__label {
