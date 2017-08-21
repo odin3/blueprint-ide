@@ -41,7 +41,7 @@ export class WorkspaceComponent implements OnInit {
 
   onFileSelect(item: IFileTreeItem) {
     const editor = this.assoc.getFileEditorClass(item.uid);
-    this.tabset.createTab(item.label, item.uid, editor, null);
+    this.tabset.createTab(item.label, item.uid, editor, item.icon);
   }
 
 

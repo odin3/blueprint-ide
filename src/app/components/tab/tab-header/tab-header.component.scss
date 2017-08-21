@@ -20,6 +20,8 @@
 }
 
 .tab__control {
+  display: flex;
+  align-items: center;
   position: relative;
   border-right: 1px solid #1E1E1E;
   background-color: #2D2D2D;
@@ -69,4 +71,10 @@
   &:hover {
     color: white;
   }
+}
+
+.tab__control__icon {
+  font-size: 19px;
+  line-height: 0px;
+  margin-right: 5px;
 }

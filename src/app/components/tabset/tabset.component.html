@@ -2,7 +2,7 @@
   <tab-header *ngFor="let tab of tabs; let i = index;"
               [label]="tab.label"
               [active]="currentTab === i"
-              [icon]="getIcon(tab.tabType)"
+              [icon]="tab.icon"
               (select)="currentTab = i"
               (close)="closeTab(i);"></tab-header>
 </div>

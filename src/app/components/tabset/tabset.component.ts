@@ -35,12 +35,8 @@ export class TabsetComponent implements OnInit, AfterContentInit {
     // this.createTab('RootComponent', 'file.txt', BlueprintTabComponent, TabTypes.TAB_CODE);
   }
 
-  public getIcon(type: number): string {
-    return getTabIcon(type);
-  }
-
-  public createTab(label: string, path: string, classType: ITabContext, tabType: number = TabTypes.TAB_COMMON) {
-    this.tabs.push({label, path, classType, tabType});
+  public createTab(label: string, path: string, classType: ITabContext, icon: string) {
+    this.tabs.push({label, path, classType, icon});
   }
 
   public closeTab(tabIndex: number) {

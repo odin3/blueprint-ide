@@ -1,7 +1,7 @@
 <div class="tab__control"
     (transitionend)="isClosing && close.emit()"
     [ngClass]="{'tab__control--active': active, 'tab__control--closing': isClosing}">
-  <i [class]="iconClass"></i>
+  <md-icon [colored]="true" [icon]="icon" class="tab__control__icon"></md-icon>
   <span class="tab__title" (click)="select.emit()">{{label}}</span>
   <button class="tab__close" (click)="onClose();" title="Close tab">
     <i class="mdi mdi-close"></i>
