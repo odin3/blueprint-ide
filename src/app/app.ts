@@ -1,6 +1,7 @@
 import { NgDraggableModule } from 'angular-draggable';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { ResizableModule } from 'angular-resizable-element';
+import { CodemirrorModule } from 'ng2-codemirror';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*
@@ -40,6 +41,7 @@ import { pipes } from './pipes';
       NgDraggableModule,
       AngularDraggableModule,
       ResizableModule,
+      CodemirrorModule,
       RouterModule.forRoot(routes, { useHash: true }),
       AppStoreModule,
       StoreDevtoolsModule.instrumentOnlyWithExtension({

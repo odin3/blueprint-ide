@@ -1,0 +1,26 @@
+@import '~codemirror/lib/codemirror';
+
+:host {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.preloader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  max-width: 170px;
+  min-width: 95px;
+  transform: translate(-50%, -50%);
+}
+
+.editor {
+  height: 100%;
+  width: 100%;
+}
+
+.CodeMirror {
+  height: 100%;
+}

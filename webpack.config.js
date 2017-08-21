@@ -91,6 +91,10 @@ var config = {
             {
                 test: /\.svg/,
                 loader: 'svg-url-loader'
+            },
+            {
+              test: /\.css$/,
+              use: [ 'style-loader', 'css-loader' ]
             }
         ]
     },
@@ -114,10 +118,6 @@ var config = {
             from: 'src/assets',
             to: 'assets'
           }
-          // {
-          //   from: 'node_modules/monaco-editor/min/vs',
-          //   to: './src/assets/monaco',
-          // }
         ]),
         /**
        * Plugin LoaderOptionsPlugin (experimental)
