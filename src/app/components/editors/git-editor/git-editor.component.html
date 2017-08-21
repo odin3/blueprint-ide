@@ -1,0 +1,26 @@
+<progress-bar
+  class="preloader"
+  *ngIf="isLoading"
+  text="Loading package information..."
+  [indeterminate]="true"
+></progress-bar>
+
+<div class="pkg-editor" *ngIf="isLoaded">
+  <page-header
+    label="Git"
+    icon="git"
+  >
+    Git source control system settings
+  </page-header>
+  <div class="panel pkg-editor__panel">
+    <div class="pkg-editor__container animated--slide-up">
+      <panel label="Ignored files and directories">
+        <grind
+          [columns]="cols"
+          [items]="ignoredFiles"
+          (itemsDelete)="onItemDelete($event)"
+        ></grind>
+      </panel>
+    </div>
+  </div>
+</div>

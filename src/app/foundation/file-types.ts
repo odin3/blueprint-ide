@@ -1,4 +1,4 @@
-import { PackageEditorComponent } from '../components/editors';
+import { PackageEditorComponent, GitEditorComponent } from '../components/editors';
 
 /**
  * File types
@@ -105,6 +105,7 @@ export enum FILE_TYPES {
 
 const EDITORS = [];
 EDITORS[FILE_TYPES.GEN_PACKAGE_JSON] = PackageEditorComponent;
+EDITORS[FILE_TYPES.GEN_GITIGNORE] = GitEditorComponent;
 
 export const FILE_EDITORS = EDITORS;
 

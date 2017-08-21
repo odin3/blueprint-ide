@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { isString } from 'lodash';
 
 @Component({
   selector: 'page-header',
@@ -10,7 +11,11 @@ export class PageHeaderComponent implements OnInit {
   @Input() label: string;
   @Input() description: string;
   @Input() icon: string;
-  @Input() iconColor: string = '#ffffff';
+  @Input() iconColor: string = null;
+
+  get colorDefined(): boolean {
+    return isString(this.iconColor);
+  }
 
   constructor() {
 

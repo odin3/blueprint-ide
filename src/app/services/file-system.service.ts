@@ -102,5 +102,10 @@ export class FileSystemService {
     return JSON.parse(data);
   }
 
+  async readListFile(path: string): Promise<string[]> {
+    const data = await this.readTextFile(path);
+    return data.trim().split('\n').filter((i) => !i.startsWith('#') && (i.trim().length > 0));
+  }
+
 
 }
