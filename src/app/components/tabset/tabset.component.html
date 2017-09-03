@@ -9,11 +9,13 @@
 
 <div class="tabset__container">
   <ng-template ngFor let-tab [ngForOf]="tabs" let-i="index">
-    <dynamic-tab [label]="tab.label"
-                 [ngClass]="{'hidden': currentTab !== i}"
-                 [tabType]="tab.tabType"
-                 [classType]="tab.classType"
-                 [path]="tab.path"></dynamic-tab>
+    <dynamic-tab
+      [label]="tab.label"
+      [ngClass]="{'hidden': currentTab !== i}"
+      [tabType]="tab.tabType"
+      [classType]="tab.classType"
+      [path]="tab.path"
+    ></dynamic-tab>
   </ng-template>
   <tabset-wellcome *ngIf="tabs.length === 0" (open)="makeTab();"></tabset-wellcome>
 </div>
