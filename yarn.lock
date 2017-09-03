@@ -2879,6 +2879,10 @@ ng2-monaco-editor@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/ng2-monaco-editor/-/ng2-monaco-editor-0.0.1.tgz#1f0a8849552ff43da7fb208fd85ac7e316869ace"
 
+ngx-slimscroll@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/ngx-slimscroll/-/ngx-slimscroll-3.3.3.tgz#d7e92f072f0c17d5884dc930f47e7804fd30a9f4"
+
 node-dir@^0.1.10:
   version "0.1.16"
   resolved "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.16.tgz#d2ef583aa50b90d93db8cdd26fcea58353957fe4"
