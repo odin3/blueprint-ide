@@ -15,6 +15,7 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NgSlimScrollModule } from 'ngx-slimscroll';
 
 
 // Setup redux with ngrx
@@ -44,6 +45,7 @@ import { pipes } from './pipes';
       CodemirrorModule,
       RouterModule.forRoot(routes, { useHash: true }),
       AppStoreModule,
+      NgSlimScrollModule,
       StoreDevtoolsModule.instrumentOnlyWithExtension({
         maxAge: 5
       })
