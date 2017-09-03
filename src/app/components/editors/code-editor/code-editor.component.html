@@ -1,6 +1,11 @@
 <!-- <monaco-editor #editor [(ngModel)]="code" [language]="language" ></monaco-editor> -->
 <!-- @ref: https://github.com/chymz/ng2-codemirror -->
-<codemirror [(ngModel)]="code" *ngIf="isLoaded" class="editor" [config]="config"></codemirror>
+<codemirror
+  *ngIf="isLoaded"
+  [(ngModel)]="code"
+  class="editor"
+  [config]="editorConriguration"
+></codemirror>
 
 <progress-bar
   class="preloader"

@@ -20,3 +20,10 @@ require('zone.js/dist/long-stack-trace-zone');
 
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/mergeMap');
+
+require('codemirror');
+
+require('codemirror/mode/sass/sass');
+require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/htmlmixed/htmlmixed');
+// require('codemirror/mode/less/less');
