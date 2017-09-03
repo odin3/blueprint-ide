@@ -38,6 +38,10 @@ export class FileSystemService {
     });
   }
 
+  getFileName(filePath: string): string {
+    return path.basename(filePath);
+  }
+
   getItemStats(fullPath: string): Promise<fs.Stats> {
     return new Promise((resolve, reject) => {
       fs.lstat(fullPath, (err, stats) => {
